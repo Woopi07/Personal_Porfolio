@@ -24,8 +24,8 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - Custom cursor (fine pointers only), fully responsive, respects `prefers-reduced-motion`
 
 ## Personalising
-- **Name / bio / timeline / email / socials:** edit `index.html` (search for `hello@yourdomain.com`, `Year`, `School Name` and the social URLs).
-- **Hero stats:** `data-count` attributes in the hero.
+- **Name / bio / timeline / socials:** edit `index.html`.
+- **Contact form:** messages are forwarded to `mjmallorca04@gmail.com` by [FormSubmit](https://formsubmit.co) (no backend needed). The very first submission sends an activation email to that inbox — click **Activate** once and every later message is delivered. If FormSubmit is unreachable, the form falls back to opening the visitor's email app.
 - **Projects:** edit the `projects` array at the top of `js/main.js`. Each project shows as a showcase row with a flip-through image deck, and every image also appears in the "Every piece" gallery wall. Set `images: [...]`, `tags`, `links`, and `landscape: true` for website screenshots (adds a browser frame).
 - **Certifications:** edit the `certifications` array in `js/main.js` — `{ title, issuer, date, url?, image? }`. Remove `placeholder: true` once filled in.
 - **Portrait:** replace `assets/portrait.webp`.

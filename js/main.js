@@ -515,24 +515,6 @@
   }, { threshold: 0.14, rootMargin: "0px 0px -6% 0px" });
   $$("[data-reveal]").forEach((el) => revealIO.observe(el));
 
-  // Count-up stats
-  const countIO = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      const el = e.target, target = +el.dataset.count;
-      countIO.unobserve(el);
-      if (reduceMotion) { el.textContent = target; return; }
-      const start = performance.now(), dur = 1400;
-      const tick = (t) => {
-        const k = Math.min(1, (t - start) / dur);
-        el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
-        if (k < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    });
-  }, { threshold: 0.6 });
-  $$("[data-count]").forEach((el) => countIO.observe(el));
-
   // Timeline progress line
   const timeline = $("#timeline");
   const updateTimeline = () => {
@@ -759,8 +741,12 @@
     toast("Email copied to clipboard");
   });
 
+  // Messages are delivered to the inbox by FormSubmit (formsubmit.co); if that
+  // service can't be reached, fall back to opening the visitor's email app.
+  const FORM_ENDPOINT = `https://formsubmit.co/ajax/${email}`;
   const form = $("#contactForm");
-  form.addEventListener("submit", (e) => {
+  const submitBtn = $('button[type="submit"]', form);
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let ok = true;
     $$("[required]", form).forEach((input) => {
@@ -771,11 +757,39 @@
     if (!ok) { toast("Please fill in the highlighted fields"); return; }
 
     const data = new FormData(form);
+    if (data.get("_honey")) return; // bot
     const subject = `[Portfolio] ${data.get("topic")} — ${data.get("name")}`;
-    const body = `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`;
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    toast("Opening your email app…");
-    form.reset();
+
+    const label = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          topic: data.get("topic"),
+          message: data.get("message"),
+          _subject: subject,
+          _replyto: data.get("email"),
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
+      toast("Message sent — I’ll get back to you soon!");
+      form.reset();
+    } catch (err) {
+      const body = `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`;
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      toast("Opening your email app instead…");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = label;
+    }
   });
   $$("input, textarea", form).forEach((el) =>
     el.addEventListener("input", () => el.closest(".field").classList.remove("has-error")));
