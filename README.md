@@ -5,12 +5,12 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 ## Palette
 | Token | Hex | Use |
 |---|---|---|
-| Navy | `#061E29` | Main background, primary containers |
-| Ocean | `#1D546D` | Secondary cards, borders, hover backgrounds |
-| Teal | `#5F9598` | Accents, subtitles, badges, subtle borders |
-| Mist | `#F3F4F4` | Headings, high-contrast text, CTAs |
+| Ink | `#000000` | Main background, primary containers |
+| Wine | `#8E1616` | Secondary cards, borders, hover backgrounds |
+| Sand | `#E8C999` | Accents, subtitles, badges, subtle borders |
+| Cream | `#F8EEDF` | Headings, high-contrast text, CTAs |
 
-`--teal-soft` (`#8EC3C5`) is a lighter teal used only for small text on ocean surfaces, where plain teal is too low-contrast.
+`--sand-soft` (`#F0D9B5`) is a lighter sand used only for small text on wine surfaces.
 
 ## Features
 - Sticky translucent header with backdrop blur and scroll-based active-section highlighting
