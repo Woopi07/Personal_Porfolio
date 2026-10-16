@@ -119,12 +119,18 @@
 
   /* =======================================================
      Certifications — add one object per certificate.
-     `url` (verify link) and `image` (certificate scan) are optional.
+     `image` (certificate scan, opens in a lightbox), `url` (verify link),
+     `credential` (ID) and `skills` are optional.
      ======================================================= */
   const certifications = [
-    { title: "Certificate name", issuer: "Issuing organization", date: "2026", placeholder: true },
-    { title: "Certificate name", issuer: "Issuing organization", date: "2026", placeholder: true },
-    { title: "Certificate name", issuer: "Issuing organization", date: "2026", placeholder: true },
+    {
+      title: "Networking Basics",
+      issuer: "Cisco Networking Academy",
+      date: "22 Jul 2026",
+      credential: "53cb3c21-70f5-4dea-8356-8ab1cdc25133",
+      image: "assets/certs/cisco-networking-basics.webp",
+      skills: ["Networking", "TCP/IP", "Network Devices"],
+    },
   ];
 
   /* =======================================================
@@ -345,22 +351,51 @@
   $("#wallCount").textContent = wallItems.length;
 
   // Certificates
-  $("#certGrid").innerHTML = certifications.map((c, i) => {
-    const tagName = c.url ? "a" : "div";
-    const attrs = c.url ? ` href="${c.url}" target="_blank" rel="noopener"` : "";
-    return `
-    <${tagName} class="cert${c.placeholder ? " is-placeholder" : ""}"${attrs} data-tilt data-reveal style="--d:${i * 0.08}s">
-      <div class="cert-media">${c.image
-        ? `<img src="${c.image}" alt="${c.title} certificate" loading="lazy" />`
-        : `<svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>`}</div>
+  const certLogo = `<svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>`;
+  $("#certGrid").innerHTML = certifications.map((c, i) => `
+    <article class="cert${c.placeholder ? " is-placeholder" : ""}" data-tilt data-reveal style="--d:${i * 0.08}s">
+      ${c.image
+        ? `<button class="cert-media" data-cert="${i}" aria-label="View ${c.title} certificate">
+             <img src="${c.image}" alt="${c.title} certificate from ${c.issuer}" loading="lazy" />
+             <span class="cert-zoom">View certificate</span>
+           </button>`
+        : `<div class="cert-media">${certLogo}</div>`}
       <div class="cert-body">
         <span class="cert-date">${c.date}</span>
         <h3>${c.title}</h3>
         <p>${c.issuer}</p>
-        ${c.url ? `<span class="cert-link">Verify credential ↗</span>` : ""}
+        ${c.skills ? `<ul class="cert-skills">${c.skills.map((k) => `<li>${k}</li>`).join("")}</ul>` : ""}
+        ${c.credential ? `<p class="cert-id">ID · ${c.credential}</p>` : ""}
+        ${c.url ? `<a class="cert-link" href="${c.url}" target="_blank" rel="noopener">Verify credential ↗</a>` : ""}
       </div>
-    </${tagName}>`;
-  }).join("");
+    </article>`).join("");
+
+  // Certificate lightbox
+  const lightbox = $("#certLightbox");
+  const lightboxImg = $("img", lightbox);
+  let lbReturn = null;
+  const closeLightbox = () => {
+    if (!lightbox.classList.contains("is-open")) return;
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (lbReturn) lbReturn.focus({ preventScroll: true });
+  };
+  $("#certGrid").addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-cert]");
+    if (!btn) return;
+    const c = certifications[+btn.dataset.cert];
+    lbReturn = btn;
+    lightboxImg.src = c.image;
+    lightboxImg.alt = `${c.title} certificate from ${c.issuer}`;
+    $(".lightbox-cap", lightbox).textContent = `${c.title} · ${c.issuer} · ${c.date}`;
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    setTimeout(() => $(".lightbox-close", lightbox).focus(), 60);
+  });
+  $$("[data-lb-close]", lightbox).forEach((el) => el.addEventListener("click", closeLightbox));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
 
   /* ---- image decks: arrows, swipe, keyboard, autoplay while visible ---- */
   const AUTOPLAY_MS = 3600;
