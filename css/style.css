@@ -352,45 +352,16 @@ mark { background: none; color: var(--cream); box-shadow: inset 0 -.38em 0 rgba(
 
 .portrait-frame {
   position: absolute; inset: 0; border-radius: var(--radius-lg); overflow: hidden;
-  background: radial-gradient(120% 90% at 50% 20%, #b31f1f 0%, var(--wine) 45%, #3d0606 100%);
+  background: var(--wine);
   border: 1px solid rgba(var(--sand-rgb), .35);
   box-shadow: 0 50px 90px -40px rgba(0, 0, 0, .8), 0 0 0 10px rgba(var(--wine-rgb), .35);
 }
-/* designed backdrop behind the cut-out portrait */
-.pf-bg { position: absolute; inset: 0; overflow: hidden; }
-.pf-rays {
-  position: absolute; left: 50%; top: 34%; width: 220%; aspect-ratio: 1; translate: -50% -50%;
-  background: repeating-conic-gradient(from 0deg, rgba(var(--sand-rgb), .16) 0deg 7deg, transparent 7deg 18deg);
-  -webkit-mask-image: radial-gradient(circle, #000 18%, transparent 58%);
-  mask-image: radial-gradient(circle, #000 18%, transparent 58%);
-  animation: raysSpin 60s linear infinite;
-}
-@keyframes raysSpin { to { rotate: 360deg; } }
-.pf-dots {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(var(--cream-rgb), .22) 1.4px, transparent 1.6px);
-  background-size: 14px 14px;
-  -webkit-mask-image: linear-gradient(200deg, #000 0%, transparent 55%);
-  mask-image: linear-gradient(200deg, #000 0%, transparent 55%);
-}
-.pf-word {
-  position: absolute; left: 50%; top: 3%; translate: -50% 0;
-  font: 700 clamp(120px, 15vw, 210px)/.9 var(--font-hero); letter-spacing: -.02em;
-  color: transparent; -webkit-text-stroke: 2px rgba(var(--sand-rgb), .55);
-  white-space: nowrap;
-}
-.pf-glow {
-  position: absolute; left: 50%; top: 38%; width: 75%; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--sand-rgb), .55), rgba(var(--sand-rgb), 0) 65%);
-}
 .portrait-frame img {
-  position: absolute; left: 50%; bottom: 0; translate: -50% 0;
-  width: 112%; max-width: none; height: auto;
-  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, .45));
-  transform-origin: 50% 100%;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%;
+  transform: scale(1.12);
   transition: transform .8s var(--ease);
 }
-.portrait-stage:hover .portrait-frame img { transform: scale(1.04); }
+.portrait-stage:hover .portrait-frame img { transform: scale(1.06); }
 
 .scroll-cue {
   position: absolute; left: 50%; bottom: 28px; translate: -50% 0;
@@ -504,10 +475,6 @@ mark { background: none; color: var(--cream); box-shadow: inset 0 -.38em 0 rgba(
 .sticker svg { width: 100%; height: 100%; display: block; }
 .sticker.star { width: 22%; aspect-ratio: 1; right: -11%; bottom: 30%; animation: wobble 5s ease-in-out infinite; }
 .sticker.star path { fill: var(--sand-soft); stroke: var(--cream); stroke-width: 5; stroke-linejoin: round; }
-.sticker.badge { width: 24%; aspect-ratio: 1; left: -10%; bottom: 6%; display: grid; place-items: center; }
-.sticker.badge svg { position: absolute; inset: 0; animation: spin 18s linear infinite; }
-.sticker.badge path { fill: var(--wine); stroke: var(--cream); stroke-width: 3; stroke-linejoin: round; }
-.sticker.badge span {
   position: relative; text-align: center;
   font: 700 clamp(16px, 1.6vw, 22px)/.95 var(--font-hero); color: var(--cream);
 }
