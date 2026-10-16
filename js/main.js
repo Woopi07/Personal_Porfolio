@@ -26,10 +26,33 @@
 
   const projects = [
     {
+      id: "aurora-mpl-s18",
+      title: "Aurora Gaming × MPL PH S18",
+      category: "social",
+      wide: true,
+      summary: "Match-day and social media graphics for an MPL Philippines team.",
+      description: "A season-long social media kit for Aurora Gaming in MPL Philippines Season 18 — match results, schedules, player features and hero build guides, all built on one teal, cinematic visual system that keeps the team instantly recognisable in the feed.",
+      client: "Aurora Gaming",
+      year: "2026",
+      role: "Graphic Designer",
+      scope: "Match result and defeat posters, season match schedule, follower milestone campaign and hero build & emblem guides — designed as reusable templates so posts could go live right after each match.",
+      deliverables: ["Match result templates (win & defeat)", "Season 18 match schedule", "“Road to 100K” follower goal post", "Hero build & emblem guides", "Sponsor-ready layouts (Infinix)"],
+      links: [],
+      images: [
+        "assets/work/aurora/match-result.webp",
+        "assets/work/aurora/defeat-poster.webp",
+        "assets/work/aurora/match-schedule.webp",
+        "assets/work/aurora/follower-goal.webp",
+        "assets/work/aurora/hero-build.webp",
+      ],
+      cover: "50% 18%",
+      art: ["esports"],
+      mark: "AG",
+    },
+    {
       id: "kopi-senja",
       title: "Kopi Senja Identity",
       category: "branding",
-      wide: true,
       summary: "Warm, nostalgic identity for an artisan coffee roaster.",
       description: "A full brand identity for a small-batch coffee roaster — rooted in sunset tones and hand-drawn type to feel crafted, local and warm.",
       client: "Kopi Senja",
@@ -55,21 +78,6 @@
       links: [{ label: "Open Prototype", url: "https://www.figma.com/" }, { label: "Case Study", url: "https://www.behance.net/" }],
       art: ["phone", "ui", "phone"],
       mark: "P",
-    },
-    {
-      id: "nova-esports",
-      title: "Nova Esports Season Kit",
-      category: "social",
-      summary: "Match-day graphics and stream package for a full season.",
-      description: "An aggressive, high-energy visual system for an esports roster — built as templates so the team could ship graphics within minutes of a match ending.",
-      client: "Nova Esports",
-      year: "2024",
-      role: "Lead Designer",
-      scope: "Season key visual, match-day templates, player cards, stream overlays and short-form video edits.",
-      deliverables: ["Season key visual", "Match-day & result templates", "Player card series", "OBS stream overlay pack"],
-      links: [{ label: "View on Instagram", url: "https://www.instagram.com/" }],
-      art: ["esports", "social", "esports"],
-      mark: "NV",
     },
     {
       id: "lumen-studio",
@@ -311,7 +319,7 @@
 
   const mediaFor = (p, i) =>
     p.images && p.images[i]
-      ? `<img src="${p.images[i]}" alt="" loading="lazy" />`
+      ? `<img src="${p.images[i]}" alt="${p.title} — image ${i + 1}" loading="lazy" decoding="async"${p.cover ? ` style="object-position:${p.cover}"` : ""} />`
       : makeArt(p.art[i % p.art.length], p.mark, i);
 
   /* =======================================================
@@ -622,7 +630,7 @@
     $("#modalRole").textContent = p.role;
     $("#modalScope").textContent = p.scope;
     $("#modalDeliverables").innerHTML = p.deliverables.map((d) => `<li>${d}</li>`).join("");
-    $("#modalLinks").innerHTML = p.links.map((l, i) =>
+    $("#modalLinks").innerHTML = (p.links || []).map((l, i) =>
       `<a class="btn btn-sm ${i ? "btn-ghost" : "btn-primary"}" href="${l.url}" target="_blank" rel="noopener">${l.label} ${arrowSVG}</a>`).join("");
 
     const count = Math.max(p.art.length, (p.images || []).length);
