@@ -619,6 +619,7 @@ mark { background: none; color: var(--cream); box-shadow: inset 0 -.38em 0 rgba(
 .showcase.is-landscape .sc-stage:hover .sc-slide[data-pos="0"] img { transform: scale(1.03); }
 .showcase.is-landscape .sc-slide img { transition: transform 1.2s var(--ease); object-position: top; }
 .showcase.is-landscape { grid-template-columns: 1.35fr .65fr; }
+.showcase.is-landscape:nth-child(even) { grid-template-columns: .65fr 1.35fr; }
 
 .sc-controls { display: flex; align-items: center; gap: 12px; margin-top: 26px; width: 86%; }
 .sc-btn {
@@ -755,7 +756,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 .cert.is-placeholder .cert-body h3, .cert.is-placeholder .cert-body p { opacity: .55; }
 
 @media (max-width: 900px) {
-  .showcase, .showcase.is-landscape { grid-template-columns: 1fr; }
+  .showcase, .showcase.is-landscape, .showcase.is-landscape:nth-child(even) { grid-template-columns: 1fr; }
   .showcase:nth-child(even) .sc-stage-wrap { order: 0; }
   .sc-deck { width: 82%; }
 }
