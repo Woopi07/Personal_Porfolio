@@ -754,9 +754,10 @@
     const json = await res.json().catch(() => ({}));
     if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
   };
+  // Contact form: open the visitor's email app with everything pre-filled,
+  // so all they have to do is press Send.
   const form = $("#contactForm");
-  const submitBtn = $('button[type="submit"]', form);
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     let ok = true;
     $$("[required]", form).forEach((input) => {
@@ -769,29 +770,9 @@
     const data = new FormData(form);
     if (data.get("_honey")) return; // bot
     const subject = `[Portfolio] ${data.get("topic")} — ${data.get("name")}`;
-
-    const label = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending…";
-    try {
-      await sendToInbox({
-        name: data.get("name"),
-        email: data.get("email"),
-        topic: data.get("topic"),
-        message: data.get("message"),
-        _subject: subject,
-        _replyto: data.get("email"),
-      });
-      toast("Message sent — I’ll get back to you soon!");
-      form.reset();
-    } catch (err) {
-      const body = `${data.get("message")}\n\n— ${data.get("name")} (${data.get("email")})`;
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      toast("Opening your email app instead…");
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = label;
-    }
+    const body = `Hi Mj,\n\n${data.get("message")}\n\n— ${data.get("name")}\n${data.get("email")}`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    toast("Opening your email app — just press Send!");
   });
   $$("input, textarea", form).forEach((el) =>
     el.addEventListener("input", () => el.closest(".field").classList.remove("has-error")));
