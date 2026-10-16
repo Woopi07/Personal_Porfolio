@@ -30,7 +30,7 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - **Portrait:** replace `assets/portrait.webp`.
 
 ## Logo
-The **Mj** monogram lives in `assets/logo/`: a bold geometric M (V-notch top, V counter below) set beside a j in the accent colour, with a diamond for the j's dot. Drawn as solid shapes, it stays crisp from billboard size down to a 16px favicon.
+The **M** logo lives in `assets/logo/`: a single bold geometric M (V-notch top, V counter below) with a diamond set into the notch as its one accent. Drawn as solid shapes, it stays crisp from billboard size down to a 16px favicon.
 
 | File | Use |
 |---|---|
