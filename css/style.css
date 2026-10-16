@@ -994,7 +994,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
   .f-follow-inner { justify-content: center; text-align: center; }
   .f-socials a { width: 46px; height: 46px; }
   .f-grid { grid-template-columns: 1fr 1fr; }
-  .f-badge { width: 120px; grid-column: 1 / -1; }
+  .f-badge { width: 120px; grid-column: 1 / -1; justify-self: center; }
   .f-bottom { grid-template-columns: 1fr auto; }
   .f-socials-sm { grid-row: 2; }
   .f-buddy { grid-row: 1 / span 2; grid-column: 2; width: 84px; }
