@@ -612,7 +612,6 @@
     document.addEventListener("pointerover", (e) => {
       const t = e.target;
       document.body.classList.toggle("cursor-view", !!t.closest("[data-tilt-card], .wall-item"));
-      document.body.classList.toggle("cursor-light", !!t.closest(".f-follow, .f-main"));
       document.body.classList.toggle("cursor-hover", !!t.closest("a, button, .pill, input, textarea, select, [data-tilt]") && !t.closest("[data-tilt-card], .wall-item"));
     });
 
