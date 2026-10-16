@@ -16,7 +16,7 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - Sticky translucent header with backdrop blur and scroll-based active-section highlighting
 - Playful "design-editor" hero: selection boxes with handles, multiplayer cursor, pill labels, stickers and a toolbar around a mouse-tracking 3D portrait
 - Skill pills with soft cream glow + magnetic hover
-- Alternating project showcases with auto-playing, swipeable image decks (arrows, keyboard, 3D tilt), plus a filterable masonry wall of every piece
+- Separate Web Projects and Graphic Design sections: alternating showcases with auto-playing, swipeable image decks (arrows, keyboard, 3D tilt), plus a masonry wall of every design piece
 - Project lightbox with gallery thumbnails, scope, deliverables and external links (Esc / backdrop to close, focus trap)
 - Vertical experience timeline with scroll progress line and fade-ins
 - Certifications grid with light-sweep hover cards

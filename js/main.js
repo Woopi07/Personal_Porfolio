@@ -280,7 +280,8 @@
   /* =======================================================
      Render project showcases (alternating rows with an image deck)
      ======================================================= */
-  const grid = $("#projectGrid");
+  const webList = $("#webList");
+  const designList = $("#designList");
   const wall = $("#workWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
   const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
@@ -288,7 +289,7 @@
   const host = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const imageCount = (p) => (p.images ? p.images.length : 1);
 
-  grid.innerHTML = projects.map((p, i) => {
+  const showcaseHTML = (p, i) => {
     const n = imageCount(p);
     const site = p.landscape && p.links && p.links[0];
     const slides = Array.from({ length: n }, (_, k) =>
@@ -326,10 +327,14 @@
         </div>
       </div>
     </article>`;
-  }).join("");
+  };
+  const webProjects = projects.filter((p) => p.category === "uiux");
+  const designProjects = projects.filter((p) => p.category === "social");
+  webList.innerHTML = webProjects.map(showcaseHTML).join("");
+  designList.innerHTML = designProjects.map(showcaseHTML).join("");
 
   // Every image as its own tile in a masonry wall
-  const wallItems = projects.flatMap((p) =>
+  const wallItems = designProjects.flatMap((p) =>
     Array.from({ length: imageCount(p) }, (_, k) => ({ p, k })));
   wall.innerHTML = wallItems.map(({ p, k }, i) => `
     <button class="wall-item${p.landscape ? " is-landscape" : ""}" data-project="${p.id}" data-index="${k}" data-cat="${p.category}"
@@ -439,7 +444,7 @@
   // Pick the section crossing an imaginary line 35% down the viewport.
   const updateActive = () => {
     const line = window.innerHeight * 0.35;
-    let current = sections[0].id;
+    let current = null;
     for (const s of sections) if (s.getBoundingClientRect().top <= line) current = s.id;
     if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = sections[sections.length - 1].id;
     setActive(current);
@@ -502,48 +507,6 @@
   };
   updateTimeline();
   window.addEventListener("scroll", updateTimeline, { passive: true });
-
-  /* =======================================================
-     Filtering with FLIP layout animation
-     ======================================================= */
-  const filters = $$(".filter");
-  const indicator = $(".filter-indicator");
-
-  const moveIndicator = (btn) => {
-    indicator.style.width = `${btn.offsetWidth}px`;
-    indicator.style.height = `${btn.offsetHeight}px`;
-    indicator.style.transform = `translate(${btn.offsetLeft}px, ${btn.offsetTop}px)`;
-  };
-
-  const applyFilter = (cat) => {
-    const items = [...$$(".showcase", grid), ...$$(".wall-item", wall)];
-    let shown = 0;
-    items.forEach((el) => {
-      const show = cat === "all" || el.dataset.cat === cat;
-      const wasHidden = el.classList.contains("is-hidden");
-      el.classList.toggle("is-hidden", !show);
-      el.classList.add("is-visible"); // make sure reveal state doesn't hide them
-      if (show && wasHidden && !reduceMotion) {
-        el.animate(
-          [{ opacity: 0, transform: "translateY(28px) scale(.97)" }, { opacity: 1, transform: "none" }],
-          { duration: 600, easing: EASE, delay: (shown++ % 6) * 50, fill: "backwards" }
-        );
-      }
-    });
-    $("#wallCount").textContent = $$(".wall-item:not(.is-hidden)", wall).length;
-  };
-
-  filters.forEach((btn) => btn.addEventListener("click", () => {
-    if (btn.classList.contains("is-active")) return;
-    filters.forEach((b) => { b.classList.toggle("is-active", b === btn); b.setAttribute("aria-selected", String(b === btn)); });
-    moveIndicator(btn);
-    applyFilter(btn.dataset.filter);
-  }));
-
-  const activeFilter = () => $(".filter.is-active");
-  requestAnimationFrame(() => moveIndicator(activeFilter()));
-  window.addEventListener("resize", () => moveIndicator(activeFilter()));
-  document.fonts && document.fonts.ready.then(() => moveIndicator(activeFilter()));
 
   /* =======================================================
      3D tilt (project cards, services, timeline) — pointer only
@@ -720,7 +683,7 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  [grid, wall].forEach((root) => root.addEventListener("click", (e) => {
+  [webList, designList, wall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
   }));
