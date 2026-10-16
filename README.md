@@ -30,12 +30,17 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - **Portrait:** replace `assets/portrait.webp`.
 
 ## Logo
-The **Mj** monogram lives in `assets/logo/`: the M's right leg flows into the hook of a lowercase j, and the j's dot is a square selection handle (developer + designer).
+The **Mj** monogram lives in `assets/logo/`. The M's right leg is shared with a lowercase j — coloured in the accent so the two letters (and the two disciplines, development and design) visibly share one stroke. The j's dot is a square selection handle.
 
 | File | Use |
 |---|---|
 | `mj-logo-black.svg` / `-1024.png` | Primary — black tile (also `favicon.svg`) |
-| `mj-logo-wine.svg` / `-1024.png` | Wine tile — social avatars, stickers |
+| `mj-logo-wine.svg` / `-1024.png` | Wine tile — profile pictures, social avatars |
 | `mj-logo-sand.svg` / `-1024.png` | Sand tile — light contexts |
-| `mj-mark-cream.svg` | Transparent mark for dark backgrounds |
-| `mj-mark-black.svg` | Transparent mark for light backgrounds |
+| `mj-logo-cream.svg` / `-1024.png` | Cream tile — light contexts, print |
+| `mj-mark-cream.svg` | Mark only, for dark backgrounds |
+| `mj-mark-black.svg` | Mark only, for light backgrounds |
+| `mj-lockup-dark.svg` / `.png` | Mark + name + title, for dark backgrounds |
+| `mj-lockup-light.svg` / `.png` | Mark + name + title, for light backgrounds |
+
+The lockup text is outlined (Fredoka SemiBold converted to vector paths), so it renders identically everywhere without the font installed.
