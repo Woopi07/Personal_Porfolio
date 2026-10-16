@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Graphic &amp; UI/UX Designer</title>
-  <meta name="description" content="Portfolio of a Graphic & UI/UX Designer: visual branding, UI/UX prototyping, esports & social media design, vector art and layouts." />
-  <meta name="theme-color" content="#222831" />
+  <title>Mj Mallorca — Software Developer &amp; Graphic Designer</title>
+  <meta name="description" content="Mj Mallorca — Software Developer & Graphic Designer. Accessible interfaces, responsive front-end web apps, and freelance graphic design." />
+  <meta name="theme-color" content="#061E29" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -22,8 +22,8 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a href="#hero" class="brand" data-magnetic aria-label="Back to top">
-        <span class="brand-mark">YN</span>
-        <span class="brand-name">Your&nbsp;Name</span>
+        <span class="brand-mark">Mj</span>
+        <span class="brand-name">Mj&nbsp;Mallorca</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Primary">
@@ -54,20 +54,32 @@
 
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow" data-reveal><span class="dot"></span> Available for freelance &amp; full-time roles</p>
+          <p class="eyebrow" data-reveal><span class="dot"></span> Open to freelance &amp; full-time roles</p>
 
-          <h1 class="hero-title" data-reveal style="--d:.08s">
-            <span class="line">Port<span class="outline">folio</span></span>
-            <span class="line small">Your Name</span>
+          <div class="hello-pills" data-reveal style="--d:.05s" aria-hidden="true">
+            <span class="tag-pill solid">Hello,</span>
+            <span class="tag-pill">my name is</span>
+          </div>
+
+          <h1 class="hero-title" data-reveal style="--d:.1s">
+            <span class="line">
+              <span class="sel" aria-hidden="false">Mj<i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><span class="sel-size">W 2.4k · H 1.1k</span></span>
+            </span>
+            <span class="line">Mall<span class="sel sel-letter">o<i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i></span>rca</span>
+            <span class="mp-cursor" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 3l16 8-7 2-3 7z"/></svg>
+              <span>you</span>
+            </span>
           </h1>
 
-          <p class="hero-role" data-reveal style="--d:.16s">
-            Graphic <span class="amp">&amp;</span> UI/UX Designer
-          </p>
+          <div class="role-pills" data-reveal style="--d:.16s">
+            <span class="role-pill teal">Software Developer</span>
+            <span class="role-pill ocean">Graphic Designer</span>
+          </div>
 
           <p class="hero-tagline" data-reveal style="--d:.24s">
-            I craft bold visual identities and intuitive digital experiences —
-            where sharp branding meets thoughtful interface design.
+            I design accessible digital interfaces and build responsive front-end
+            web applications that align with real business needs.
           </p>
 
           <div class="hero-actions" data-reveal style="--d:.32s">
@@ -79,33 +91,43 @@
           </div>
 
           <dl class="hero-stats" data-reveal style="--d:.4s">
-            <div><dt>Projects</dt><dd><span data-count="40">0</span>+</dd></div>
-            <div><dt>Clients</dt><dd><span data-count="15">0</span>+</dd></div>
+            <div><dt>Projects</dt><dd><span data-count="30">0</span>+</dd></div>
+            <div><dt>Clients</dt><dd><span data-count="10">0</span>+</dd></div>
             <div><dt>Years</dt><dd><span data-count="3">0</span>+</dd></div>
           </dl>
         </div>
 
-        <!-- Interactive visual anchor -->
+        <!-- Interactive visual anchor: "editor canvas" collage -->
         <div class="hero-visual" data-reveal style="--d:.2s">
           <div class="portrait-stage" id="portraitStage">
             <div class="portrait-card">
+              <div class="sticky-note layer" style="--z:20px" aria-hidden="true"></div>
+              <div class="this-is-me layer" style="--z:70px" aria-hidden="true">
+                <span class="tag-pill solid">This</span><span class="tag-pill">is</span><span class="tag-pill solid">me</span>
+              </div>
+
               <div class="portrait-frame layer" style="--z:30px">
-                <img src="assets/portrait.webp" alt="Portrait of the designer" width="1600" height="1067" />
+                <img src="assets/portrait.webp" alt="Portrait of Mj Mallorca" width="1600" height="1067" />
                 <div class="portrait-tint"></div>
               </div>
-              <div class="portrait-ring layer" style="--z:60px" aria-hidden="true"></div>
-              <div class="float-chip chip-a layer" style="--z:90px">
-                <span class="chip-ico">✦</span> Visual Branding
+              <div class="portrait-select layer" style="--z:45px" aria-hidden="true"><i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i></div>
+
+              <div class="sticker star layer" style="--z:100px" aria-hidden="true">
+                <svg viewBox="0 0 100 100"><path d="M50 6l12 30 32 2-25 20 9 32-28-18-28 18 9-32L6 38l32-2z"/></svg>
               </div>
-              <div class="float-chip chip-b layer" style="--z:110px">
-                <span class="chip-ico">◐</span> UI/UX Prototyping
+              <div class="sticker badge layer" style="--z:90px" aria-hidden="true">
+                <svg viewBox="0 0 100 100"><path d="M50 2l9 12 15-4 2 15 15 4-5 14 11 11-12 9 4 15-15 3-3 15-14-6-11 11-9-12-15 5-2-15-15-4 5-14L2 50l12-9-4-15 15-3 3-15 14 6z"/></svg>
+                <span>20<br>26</span>
               </div>
-              <div class="float-chip chip-c layer" style="--z:80px">
-                <span class="chip-ico">▲</span> Web Layouts
+
+              <div class="editor-toolbar layer" style="--z:80px" aria-hidden="true">
+                <span class="tb is-on"><svg viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-3 6z"/></svg></span>
+                <span class="tb"><svg viewBox="0 0 24 24"><path d="M8 3v18M16 3v18M3 8h18M3 16h18"/></svg></span>
+                <span class="tb"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/></svg></span>
+                <span class="tb"><svg viewBox="0 0 24 24"><path d="M4 20L20 4M14 4h6v6"/></svg></span>
               </div>
-              <div class="portrait-caption layer" style="--z:50px">
-                <span>Illustrator</span><span class="sep"></span><span>Graphic Designer</span>
-              </div>
+
+              <a href="#about" class="know-me layer" style="--z:110px" data-magnetic>Get to know me</a>
             </div>
           </div>
         </div>
@@ -133,27 +155,26 @@
         </header>
 
         <div class="about-grid">
-          <div class="about-bio" data-reveal>
+          <div class="about-bio dashed-card" data-reveal>
+            <h3 class="card-label"><span class="diamond" aria-hidden="true">◆</span> About Me</h3>
             <p class="lead">
-              I’m a multidisciplinary designer who turns ideas into
-              <mark>memorable brands</mark> and <mark>effortless interfaces</mark>.
+              I turn complex requirements into <mark>clear visual prototypes</mark>,
+              polished layouts and <mark>clean, scalable front-end code</mark>.
             </p>
             <p>
-              My work spans visual branding — logos, identity systems and packaging —
-              through to UI/UX prototyping in Figma and responsive web layouts built
-              with modern front-end tools. I care about clear hierarchy, purposeful
-              typography and the small interactions that make a product feel alive.
+              I design accessible digital interfaces and build responsive front-end web
+              applications that align with real business needs.
             </p>
             <p>
-              Whether it’s a launch campaign for an esports team, a brand book for a
-              local business or a high-fidelity app prototype, I bring the same
-              obsession with detail and storytelling.
+              Grounded in Information Technology and Systems Analysis, I combine active
+              freelance graphic design experience with modern web development — so the
+              same person who sketches the brand can ship the interface.
             </p>
 
             <ul class="about-facts">
-              <li><span>Focus</span>Branding · UI/UX · Web</li>
+              <li><span>Focus</span>UI · Front-end · Branding</li>
+              <li><span>Background</span>IT &amp; Systems Analysis</li>
               <li><span>Based in</span>Your City</li>
-              <li><span>Languages</span>English</li>
             </ul>
           </div>
 
@@ -164,6 +185,8 @@
               <li class="pill" data-magnetic><span class="pill-ico">Ps</span>Adobe Photoshop</li>
               <li class="pill" data-magnetic><span class="pill-ico">Ai</span>Adobe Illustrator</li>
               <li class="pill" data-magnetic><span class="pill-ico">Cc</span>CapCut</li>
+              <li class="pill" data-magnetic><span class="pill-ico">JS</span>JavaScript</li>
+              <li class="pill" data-magnetic><span class="pill-ico">&lt;/&gt;</span>HTML &amp; CSS</li>
               <li class="pill" data-magnetic><span class="pill-ico">Tw</span>Tailwind CSS</li>
               <li class="pill" data-magnetic><span class="pill-ico">R</span>React</li>
               <li class="pill" data-magnetic><span class="pill-ico">N</span>Next.js</li>
@@ -173,18 +196,18 @@
             <div class="services">
               <article class="service" data-tilt>
                 <span class="service-no">01</span>
-                <h4>Visual Branding</h4>
-                <p>Logos, identity systems, brand books &amp; packaging.</p>
+                <h4>UI/UX &amp; Prototyping</h4>
+                <p>Accessible interfaces, user flows and interactive Figma prototypes.</p>
               </article>
               <article class="service" data-tilt>
                 <span class="service-no">02</span>
-                <h4>UI/UX Prototyping</h4>
-                <p>User flows, wireframes and interactive hi-fi prototypes.</p>
+                <h4>Front-end Development</h4>
+                <p>Responsive web apps in React, Next.js and Tailwind CSS.</p>
               </article>
               <article class="service" data-tilt>
                 <span class="service-no">03</span>
-                <h4>Web Layout Design</h4>
-                <p>Responsive, editorial layouts ready for development.</p>
+                <h4>Graphic Design</h4>
+                <p>Brand identities, social media and print layouts for real clients.</p>
               </article>
             </div>
           </div>
@@ -229,41 +252,41 @@
           <li class="tl-item" data-reveal>
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
-              <span class="tl-date">2025 — Present</span>
-              <h3>Freelance Graphic &amp; UI/UX Designer</h3>
+              <span class="tl-date">Present</span>
+              <h3>Freelance Graphic Designer &amp; Front-end Developer</h3>
               <p class="tl-org">Self-employed · Remote</p>
-              <p>Delivered brand identities, social campaigns and web prototypes for 15+ clients across F&amp;B, retail and gaming.</p>
-              <ul class="tl-tags"><li>Branding</li><li>Figma</li><li>Client Management</li></ul>
+              <p>Designing brand assets, social media content and web interfaces for clients — then building the responsive front-ends that bring them to life.</p>
+              <ul class="tl-tags"><li>Branding</li><li>Figma</li><li>React</li></ul>
             </div>
           </li>
           <li class="tl-item" data-reveal>
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
-              <span class="tl-date">2024</span>
-              <h3>Design Intern — Creative Team</h3>
-              <p class="tl-org">Agency / Company Name</p>
-              <p>Produced feed designs and promotional content; one campaign series lifted engagement noticeably during the internship period.</p>
-              <ul class="tl-tags"><li>Social Media</li><li>Photoshop</li><li>CapCut</li></ul>
+              <span class="tl-date">Year — Year</span>
+              <h3>Information Technology — Systems Analysis</h3>
+              <p class="tl-org">University / School Name</p>
+              <p>Requirements gathering, process modelling and system design — the foundation for turning business needs into clear, buildable interfaces.</p>
+              <ul class="tl-tags"><li>Systems Analysis</li><li>UML</li><li>Databases</li></ul>
             </div>
           </li>
           <li class="tl-item" data-reveal>
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
-              <span class="tl-date">2023 — 2024</span>
-              <h3>Head of Creative — Esports Organization</h3>
-              <p class="tl-org">Student / Community Team</p>
-              <p>Led a small design team building match-day graphics, jersey concepts and stream overlays for tournament seasons.</p>
-              <ul class="tl-tags"><li>Leadership</li><li>Esports</li><li>Motion</li></ul>
+              <span class="tl-date">Year</span>
+              <h3>Internship / Team Project</h3>
+              <p class="tl-org">Company or Organization</p>
+              <p>Describe a role here — e.g. designing UI for an internal tool, leading a capstone team, or shipping a client website.</p>
+              <ul class="tl-tags"><li>UI Design</li><li>Teamwork</li></ul>
             </div>
           </li>
           <li class="tl-item" data-reveal>
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
-              <span class="tl-date">2022</span>
-              <h3>First Freelance Brand Project</h3>
-              <p class="tl-org">Local Coffee Brand</p>
-              <p>Designed a complete identity — logo, jar labels and merchandise — that launched alongside the brand’s first store.</p>
-              <ul class="tl-tags"><li>Logo Design</li><li>Packaging</li></ul>
+              <span class="tl-date">Year</span>
+              <h3>First Freelance Design Client</h3>
+              <p class="tl-org">Client Name</p>
+              <p>Where it started — a first paid design project that grew into an ongoing freelance practice.</p>
+              <ul class="tl-tags"><li>Logo Design</li><li>Social Media</li></ul>
             </div>
           </li>
         </ol>
@@ -275,7 +298,7 @@
       <div class="container">
         <header class="section-head" data-reveal>
           <span class="section-index">04</span>
-          <h2 class="section-title">Let’s build <em>something</em></h2>
+          <h2 class="section-title">Let’s build <em>together</em></h2>
         </header>
 
         <div class="contact-grid">
@@ -343,9 +366,9 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-big">Your&nbsp;Name<span>.</span></p>
+      <p class="footer-big">Mj&nbsp;Mallorca<span>.</span></p>
       <div class="footer-meta">
-        <p>© <span id="year"></span> Your Name. Designed &amp; built with care.</p>
+        <p>© <span id="year"></span> Mj Mallorca. Designed &amp; coded with care.</p>
         <a href="#hero" class="back-top" data-magnetic>Back to top ↑</a>
       </div>
     </div>

@@ -11,7 +11,7 @@
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const EASE = "cubic-bezier(.22, 1, .36, 1)";
 
-  const C = { charcoal: "#222831", slate: "#393E46", taupe: "#948979", cream: "#DFD0B8" };
+  const C = { navy: "#061E29", ocean: "#1D546D", teal: "#5F9598", mist: "#F3F4F4" };
 
   /* =======================================================
      Project data — replace art with real images by setting
@@ -170,8 +170,8 @@
   let artUid = 0;
   function makeArt(kind, mark, v = 0) {
     const id = `g${++artUid}`;
-    const bgA = v % 2 ? C.slate : C.charcoal;
-    const bgB = v % 2 ? C.charcoal : C.slate;
+    const bgA = v % 2 ? C.ocean : C.navy;
+    const bgB = v % 2 ? C.navy : C.ocean;
     const defs = `<defs>
       <linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1">
         <stop offset="0" stop-color="${bgA}"/><stop offset="1" stop-color="${bgB}"/>
@@ -182,17 +182,17 @@
     switch (kind) {
       case "brand":
         body = `
-          <circle cx="${300 - v * 40}" cy="70" r="120" fill="${C.taupe}" opacity=".18"/>
+          <circle cx="${300 - v * 40}" cy="70" r="120" fill="${C.teal}" opacity=".18"/>
           <g transform="rotate(-10 140 170)">
-            <rect x="50" y="110" width="180" height="108" rx="8" fill="${C.cream}"/>
-            <circle cx="95" cy="164" r="26" fill="${C.charcoal}"/>
-            <text x="95" y="171" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="20" fill="${C.cream}">${mark}</text>
-            <rect x="135" y="150" width="70" height="8" rx="4" fill="${C.charcoal}"/>
-            <rect x="135" y="166" width="48" height="6" rx="3" fill="${C.taupe}"/>
+            <rect x="50" y="110" width="180" height="108" rx="8" fill="${C.mist}"/>
+            <circle cx="95" cy="164" r="26" fill="${C.navy}"/>
+            <text x="95" y="171" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="20" fill="${C.mist}">${mark}</text>
+            <rect x="135" y="150" width="70" height="8" rx="4" fill="${C.navy}"/>
+            <rect x="135" y="166" width="48" height="6" rx="3" fill="${C.teal}"/>
           </g>
           <g transform="rotate(8 280 180)">
-            <rect x="200" y="120" width="160" height="96" rx="8" fill="${C.charcoal}" stroke="${C.taupe}" stroke-opacity=".5"/>
-            <text x="280" y="178" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="34" fill="${C.cream}">${mark}</text>
+            <rect x="200" y="120" width="160" height="96" rx="8" fill="${C.navy}" stroke="${C.teal}" stroke-opacity=".5"/>
+            <text x="280" y="178" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="34" fill="${C.mist}">${mark}</text>
           </g>`;
         break;
 
@@ -201,26 +201,26 @@
           const x = 80 + i * 120, h = 150 - (i === 1 ? 0 : 20);
           return `
           <g>
-            <rect x="${x - 42}" y="${250 - h}" width="84" height="${h}" rx="14" fill="${C.cream}" opacity="${i === 1 ? 1 : .85}"/>
-            <rect x="${x - 46}" y="${238 - h}" width="92" height="22" rx="6" fill="${C.taupe}"/>
-            <circle cx="${x}" cy="${250 - h / 2}" r="28" fill="${C.charcoal}"/>
-            <text x="${x}" y="${256 - h / 2}" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="15" fill="${C.cream}">${mark}</text>
-            <rect x="${x - 24}" y="${270 - h / 2 + 22}" width="48" height="5" rx="2.5" fill="${C.slate}"/>
+            <rect x="${x - 42}" y="${250 - h}" width="84" height="${h}" rx="14" fill="${C.mist}" opacity="${i === 1 ? 1 : .85}"/>
+            <rect x="${x - 46}" y="${238 - h}" width="92" height="22" rx="6" fill="${C.teal}"/>
+            <circle cx="${x}" cy="${250 - h / 2}" r="28" fill="${C.navy}"/>
+            <text x="${x}" y="${256 - h / 2}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="15" fill="${C.mist}">${mark}</text>
+            <rect x="${x - 24}" y="${270 - h / 2 + 22}" width="48" height="5" rx="2.5" fill="${C.ocean}"/>
           </g>`;
-        }).join("") + `<rect x="0" y="250" width="400" height="50" fill="${C.charcoal}" opacity=".7"/>`;
+        }).join("") + `<rect x="0" y="250" width="400" height="50" fill="${C.navy}" opacity=".7"/>`;
         break;
 
       case "ui":
         body = `
-          <rect x="34" y="34" width="332" height="232" rx="12" fill="${C.charcoal}" stroke="${C.taupe}" stroke-opacity=".5"/>
-          <rect x="34" y="34" width="332" height="26" rx="12" fill="${C.slate}"/>
-          <circle cx="52" cy="47" r="4" fill="${C.taupe}"/><circle cx="66" cy="47" r="4" fill="${C.taupe}"/><circle cx="80" cy="47" r="4" fill="${C.cream}"/>
-          <text x="58" y="104" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="${v ? 22 : 28}" fill="${C.cream}">${v ? "STUDIO WORK" : "DESIGN THAT"}</text>
-          <text x="58" y="${v ? 128 : 134}" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="${v ? 22 : 28}" fill="none" stroke="${C.taupe}">${v ? "& JOURNAL" : "MOVES."}</text>
-          <rect x="58" y="152" width="80" height="22" rx="11" fill="${C.cream}"/>
-          <rect x="226" y="80" width="116" height="100" rx="10" fill="${C.taupe}" opacity=".85"/>
-          <circle cx="284" cy="130" r="26" fill="${C.cream}" opacity=".9"/>
-          ${[0, 1, 2].map((i) => `<rect x="${58 + i * 98}" y="196" width="88" height="52" rx="8" fill="${C.slate}"/><rect x="${66 + i * 98}" y="230" width="50" height="6" rx="3" fill="${C.taupe}"/>`).join("")}`;
+          <rect x="34" y="34" width="332" height="232" rx="12" fill="${C.navy}" stroke="${C.teal}" stroke-opacity=".5"/>
+          <rect x="34" y="34" width="332" height="26" rx="12" fill="${C.ocean}"/>
+          <circle cx="52" cy="47" r="4" fill="${C.teal}"/><circle cx="66" cy="47" r="4" fill="${C.teal}"/><circle cx="80" cy="47" r="4" fill="${C.mist}"/>
+          <text x="58" y="104" font-family="Fredoka,sans-serif" font-weight="700" font-size="${v ? 22 : 28}" fill="${C.mist}">${v ? "STUDIO WORK" : "DESIGN THAT"}</text>
+          <text x="58" y="${v ? 128 : 134}" font-family="Fredoka,sans-serif" font-weight="700" font-size="${v ? 22 : 28}" fill="none" stroke="${C.teal}">${v ? "& JOURNAL" : "MOVES."}</text>
+          <rect x="58" y="152" width="80" height="22" rx="11" fill="${C.mist}"/>
+          <rect x="226" y="80" width="116" height="100" rx="10" fill="${C.teal}" opacity=".85"/>
+          <circle cx="284" cy="130" r="26" fill="${C.mist}" opacity=".9"/>
+          ${[0, 1, 2].map((i) => `<rect x="${58 + i * 98}" y="196" width="88" height="52" rx="8" fill="${C.ocean}"/><rect x="${66 + i * 98}" y="230" width="50" height="6" rx="3" fill="${C.teal}"/>`).join("")}`;
         break;
 
       case "phone":
@@ -228,39 +228,39 @@
           const x = 110 + i * 110, y = i ? 50 : 30;
           return `
           <g>
-            <rect x="${x}" y="${y}" width="120" height="236" rx="22" fill="${C.charcoal}" stroke="${C.cream}" stroke-opacity=".6" stroke-width="2"/>
-            <rect x="${x + 44}" y="${y + 10}" width="32" height="6" rx="3" fill="${C.slate}"/>
-            <text x="${x + 14}" y="${y + 44}" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="14" fill="${C.cream}">${i ? "Progress" : "Today"}</text>
+            <rect x="${x}" y="${y}" width="120" height="236" rx="22" fill="${C.navy}" stroke="${C.mist}" stroke-opacity=".6" stroke-width="2"/>
+            <rect x="${x + 44}" y="${y + 10}" width="32" height="6" rx="3" fill="${C.ocean}"/>
+            <text x="${x + 14}" y="${y + 44}" font-family="Fredoka,sans-serif" font-weight="700" font-size="14" fill="${C.mist}">${i ? "Progress" : "Today"}</text>
             ${i
-              ? `<circle cx="${x + 60}" cy="${y + 104}" r="36" fill="none" stroke="${C.slate}" stroke-width="10"/>
-                 <circle cx="${x + 60}" cy="${y + 104}" r="36" fill="none" stroke="${C.cream}" stroke-width="10" stroke-dasharray="160 230" transform="rotate(-90 ${x + 60} ${y + 104})"/>
-                 <text x="${x + 60}" y="${y + 110}" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="16" fill="${C.cream}">72%</text>`
-              : `<rect x="${x + 14}" y="${y + 58}" width="92" height="64" rx="12" fill="${C.taupe}"/>
-                 <text x="${x + 24}" y="${y + 98}" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="22" fill="${C.charcoal}">${mark}</text>`}
-            ${[0, 1, 2].map((r) => `<rect x="${x + 14}" y="${y + 140 + r * 28}" width="92" height="20" rx="8" fill="${C.slate}"/><rect x="${x + 22}" y="${y + 148 + r * 28}" width="${30 + r * 14}" height="4" rx="2" fill="${C.cream}" opacity=".7"/>`).join("")}
+              ? `<circle cx="${x + 60}" cy="${y + 104}" r="36" fill="none" stroke="${C.ocean}" stroke-width="10"/>
+                 <circle cx="${x + 60}" cy="${y + 104}" r="36" fill="none" stroke="${C.mist}" stroke-width="10" stroke-dasharray="160 230" transform="rotate(-90 ${x + 60} ${y + 104})"/>
+                 <text x="${x + 60}" y="${y + 110}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="16" fill="${C.mist}">72%</text>`
+              : `<rect x="${x + 14}" y="${y + 58}" width="92" height="64" rx="12" fill="${C.teal}"/>
+                 <text x="${x + 24}" y="${y + 98}" font-family="Fredoka,sans-serif" font-weight="700" font-size="22" fill="${C.navy}">${mark}</text>`}
+            ${[0, 1, 2].map((r) => `<rect x="${x + 14}" y="${y + 140 + r * 28}" width="92" height="20" rx="8" fill="${C.ocean}"/><rect x="${x + 22}" y="${y + 148 + r * 28}" width="${30 + r * 14}" height="4" rx="2" fill="${C.mist}" opacity=".7"/>`).join("")}
           </g>`;
         }).join("");
         break;
 
       case "esports":
         body = `
-          <polygon points="0,300 0,190 400,40 400,300" fill="${C.taupe}" opacity=".2"/>
-          <polygon points="0,300 0,240 400,120 400,300" fill="${C.slate}"/>
-          <polygon points="150,40 250,40 220,260 120,260" fill="${C.cream}" opacity=".08"/>
-          <text x="200" y="${v ? 150 : 140}" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="${v ? 46 : 50}" font-style="italic" fill="${C.cream}">${v ? "VICTORY" : "MATCH DAY"}</text>
-          <text x="200" y="${v ? 190 : 190}" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="30" fill="none" stroke="${C.taupe}" stroke-width="1.5">${mark} vs RX · 2—1</text>
-          <rect x="140" y="214" width="120" height="26" rx="4" fill="${C.cream}" transform="skewX(-14)"/>
-          <text x="200" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="${C.charcoal}">LIVE 19:00</text>`;
+          <polygon points="0,300 0,190 400,40 400,300" fill="${C.teal}" opacity=".2"/>
+          <polygon points="0,300 0,240 400,120 400,300" fill="${C.ocean}"/>
+          <polygon points="150,40 250,40 220,260 120,260" fill="${C.mist}" opacity=".08"/>
+          <text x="200" y="${v ? 150 : 140}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="${v ? 46 : 50}" font-style="italic" fill="${C.mist}">${v ? "VICTORY" : "MATCH DAY"}</text>
+          <text x="200" y="${v ? 190 : 190}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="30" fill="none" stroke="${C.teal}" stroke-width="1.5">${mark} vs RX · 2—1</text>
+          <rect x="140" y="214" width="120" height="26" rx="4" fill="${C.mist}" transform="skewX(-14)"/>
+          <text x="200" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="${C.navy}">LIVE 19:00</text>`;
         break;
 
       case "social":
         body = Array.from({ length: 9 }, (_, i) => {
           const col = i % 3, row = Math.floor(i / 3);
           const x = 60 + col * 96, y = 12 + row * 96;
-          const fill = [C.cream, C.taupe, C.slate][(i + v) % 3];
-          const ink = fill === C.cream ? C.charcoal : C.cream;
+          const fill = [C.mist, C.teal, C.ocean][(i + v) % 3];
+          const ink = fill === C.mist ? C.navy : C.mist;
           const shape = i % 4 === 0
-            ? `<text x="${x + 44}" y="${y + 54}" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="22" fill="${ink}">${mark}</text>`
+            ? `<text x="${x + 44}" y="${y + 54}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="22" fill="${ink}">${mark}</text>`
             : i % 4 === 1
               ? `<circle cx="${x + 44}" cy="${y + 44}" r="22" fill="${ink}" opacity=".85"/>`
               : i % 4 === 2
@@ -271,39 +271,39 @@
         break;
 
       case "vector": {
-        const sun = v === 1 ? C.cream : C.taupe;
+        const sun = v === 1 ? C.mist : C.teal;
         body = `
           <circle cx="${v === 1 ? 120 : 270}" cy="110" r="56" fill="${sun}"/>
-          <polygon points="0,300 0,200 90,120 170,210 250,140 400,250 400,300" fill="${C.slate}"/>
-          <polygon points="0,300 0,250 120,180 230,260 330,200 400,240 400,300" fill="${C.taupe}" opacity=".7"/>
-          <polygon points="0,300 0,280 140,240 260,290 400,260 400,300" fill="${C.charcoal}"/>
-          ${[0, 1, 2, 3].map((i) => `<path d="M${40 + i * 24} ${60 + (i % 2) * 10} q 8 -8 16 0 q 8 -8 16 0" fill="none" stroke="${C.cream}" stroke-width="2" stroke-linecap="round" opacity=".7"/>`).join("")}`;
+          <polygon points="0,300 0,200 90,120 170,210 250,140 400,250 400,300" fill="${C.ocean}"/>
+          <polygon points="0,300 0,250 120,180 230,260 330,200 400,240 400,300" fill="${C.teal}" opacity=".7"/>
+          <polygon points="0,300 0,280 140,240 260,290 400,260 400,300" fill="${C.navy}"/>
+          ${[0, 1, 2, 3].map((i) => `<path d="M${40 + i * 24} ${60 + (i % 2) * 10} q 8 -8 16 0 q 8 -8 16 0" fill="none" stroke="${C.mist}" stroke-width="2" stroke-linecap="round" opacity=".7"/>`).join("")}`;
         break;
       }
 
       case "character":
         body = `
-          <circle cx="200" cy="150" r="118" fill="${C.taupe}" opacity=".22"/>
-          <rect x="140" y="170" width="120" height="130" rx="50" fill="${C.cream}"/>
-          <circle cx="200" cy="128" r="62" fill="${C.cream}"/>
-          <path d="M140 118 q 10 -70 60 -66 q 54 -4 62 62 q -30 -30 -62 -20 q -34 -14 -60 24z" fill="${C.charcoal}"/>
-          <circle cx="178" cy="136" r="7" fill="${C.charcoal}"/><circle cx="222" cy="136" r="7" fill="${C.charcoal}"/>
-          <path d="M184 160 q 16 ${v ? 18 : 12} 32 0" fill="none" stroke="${C.charcoal}" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="166" cy="154" r="8" fill="${C.taupe}" opacity=".6"/><circle cx="234" cy="154" r="8" fill="${C.taupe}" opacity=".6"/>
-          <text x="200" y="250" text-anchor="middle" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="26" fill="${C.charcoal}">${mark}</text>`;
+          <circle cx="200" cy="150" r="118" fill="${C.teal}" opacity=".22"/>
+          <rect x="140" y="170" width="120" height="130" rx="50" fill="${C.mist}"/>
+          <circle cx="200" cy="128" r="62" fill="${C.mist}"/>
+          <path d="M140 118 q 10 -70 60 -66 q 54 -4 62 62 q -30 -30 -62 -20 q -34 -14 -60 24z" fill="${C.navy}"/>
+          <circle cx="178" cy="136" r="7" fill="${C.navy}"/><circle cx="222" cy="136" r="7" fill="${C.navy}"/>
+          <path d="M184 160 q 16 ${v ? 18 : 12} 32 0" fill="none" stroke="${C.navy}" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="166" cy="154" r="8" fill="${C.teal}" opacity=".6"/><circle cx="234" cy="154" r="8" fill="${C.teal}" opacity=".6"/>
+          <text x="200" y="250" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="26" fill="${C.navy}">${mark}</text>`;
         break;
 
       case "layout":
       default:
         body = `
-          <rect x="40" y="46" width="320" height="208" rx="4" fill="${C.cream}"/>
-          <line x1="200" y1="46" x2="200" y2="254" stroke="${C.taupe}" stroke-width="2"/>
-          <rect x="56" y="64" width="128" height="96" fill="${v ? C.taupe : C.slate}"/>
-          <text x="58" y="186" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="18" fill="${C.charcoal}">${v ? "OUR STORY" : "ANNUAL"}</text>
-          ${[0, 1, 2, 3].map((i) => `<rect x="58" y="${198 + i * 12}" width="${120 - (i % 2) * 30}" height="5" rx="2" fill="${C.slate}" opacity=".6"/>`).join("")}
-          <text x="216" y="96" font-family="Big Shoulders Display,Syne,sans-serif" font-weight="900" font-size="34" fill="${C.charcoal}">${mark}</text>
-          ${[0, 1, 2, 3, 4, 5, 6].map((i) => `<rect x="216" y="${112 + i * 12}" width="${126 - (i % 3) * 22}" height="5" rx="2" fill="${C.slate}" opacity=".6"/>`).join("")}
-          <rect x="216" y="204" width="60" height="34" fill="${C.taupe}"/><rect x="282" y="204" width="60" height="34" fill="${C.charcoal}"/>`;
+          <rect x="40" y="46" width="320" height="208" rx="4" fill="${C.mist}"/>
+          <line x1="200" y1="46" x2="200" y2="254" stroke="${C.teal}" stroke-width="2"/>
+          <rect x="56" y="64" width="128" height="96" fill="${v ? C.teal : C.ocean}"/>
+          <text x="58" y="186" font-family="Fredoka,sans-serif" font-weight="700" font-size="18" fill="${C.navy}">${v ? "OUR STORY" : "ANNUAL"}</text>
+          ${[0, 1, 2, 3].map((i) => `<rect x="58" y="${198 + i * 12}" width="${120 - (i % 2) * 30}" height="5" rx="2" fill="${C.ocean}" opacity=".6"/>`).join("")}
+          <text x="216" y="96" font-family="Fredoka,sans-serif" font-weight="700" font-size="34" fill="${C.navy}">${mark}</text>
+          ${[0, 1, 2, 3, 4, 5, 6].map((i) => `<rect x="216" y="${112 + i * 12}" width="${126 - (i % 3) * 22}" height="5" rx="2" fill="${C.ocean}" opacity=".6"/>`).join("")}
+          <rect x="216" y="204" width="60" height="34" fill="${C.teal}"/><rect x="282" y="204" width="60" height="34" fill="${C.navy}"/>`;
     }
 
     return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">${defs}${body}</svg>`;
