@@ -612,6 +612,7 @@
     document.addEventListener("pointerover", (e) => {
       const t = e.target;
       document.body.classList.toggle("cursor-view", !!t.closest("[data-tilt-card], .wall-item"));
+      document.body.classList.toggle("cursor-light", !!t.closest(".f-follow, .f-main"));
       document.body.classList.toggle("cursor-hover", !!t.closest("a, button, .pill, input, textarea, select, [data-tilt]") && !t.closest("[data-tilt-card], .wall-item"));
     });
 
@@ -744,6 +745,15 @@
   // Messages are delivered to the inbox by FormSubmit (formsubmit.co); if that
   // service can't be reached, fall back to opening the visitor's email app.
   const FORM_ENDPOINT = `https://formsubmit.co/ajax/${email}`;
+  const sendToInbox = async (fields) => {
+    const res = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ _template: "table", _captcha: "false", ...fields }),
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
+  };
   const form = $("#contactForm");
   const submitBtn = $('button[type="submit"]', form);
   form.addEventListener("submit", async (e) => {
@@ -764,22 +774,14 @@
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending…";
     try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          topic: data.get("topic"),
-          message: data.get("message"),
-          _subject: subject,
-          _replyto: data.get("email"),
-          _template: "table",
-          _captcha: "false",
-        }),
+      await sendToInbox({
+        name: data.get("name"),
+        email: data.get("email"),
+        topic: data.get("topic"),
+        message: data.get("message"),
+        _subject: subject,
+        _replyto: data.get("email"),
       });
-      const json = await res.json().catch(() => ({}));
-      if (!res.ok || String(json.success) === "false") throw new Error(json.message || res.status);
       toast("Message sent — I’ll get back to you soon!");
       form.reset();
     } catch (err) {
@@ -793,6 +795,59 @@
   });
   $$("input, textarea", form).forEach((el) =>
     el.addEventListener("input", () => el.closest(".field").classList.remove("has-error")));
+
+  // Footer quick email: "leave your email and I'll reach out"
+  const quick = $("#quickForm");
+  const quickInput = $("#quickEmail", quick);
+  quick.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const val = quickInput.value.trim();
+    if (!/^\S+@\S+\.\S+$/.test(val)) {
+      quick.classList.add("has-error");
+      toast("Please enter a valid email");
+      return;
+    }
+    if ($('[name="_honey"]', quick).value) return; // bot
+    quick.classList.remove("has-error");
+    const btn = $("button", quick);
+    btn.disabled = true;
+    try {
+      await sendToInbox({
+        email: val,
+        message: "Wants to work together — left their email in the portfolio footer.",
+        _subject: `[Portfolio] New contact request — ${val}`,
+        _replyto: val,
+      });
+      toast("Got it — I’ll reach out soon!");
+      quick.reset();
+    } catch {
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent("Let’s work together")}`;
+      toast("Opening your email app instead…");
+    } finally {
+      btn.disabled = false;
+    }
+  });
+  quickInput.addEventListener("input", () => quick.classList.remove("has-error"));
+
+  // Footer buddy: the pupil follows the cursor
+  const pupil = $(".buddy-pupil");
+  const eye = $(".buddy-eye");
+  if (pupil && !reduceMotion) {
+    let raf = 0, px = 0, py = 0;
+    const look = () => {
+      raf = 0;
+      const r = eye.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      const dx = px - cx, dy = py - cy;
+      const d = Math.hypot(dx, dy) || 1;
+      const k = Math.min(1, d / 260);
+      pupil.style.transform = `translate(${(dx / d) * 17 * k}px, ${(dy / d) * 10 * k}px)`;
+    };
+    window.addEventListener("pointermove", (e) => {
+      px = e.clientX; py = e.clientY;
+      if (!raf) raf = requestAnimationFrame(look);
+    }, { passive: true });
+  }
 
   $("#year").textContent = new Date().getFullYear();
 })();
