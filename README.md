@@ -16,17 +16,18 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - Sticky translucent header with backdrop blur and scroll-based active-section highlighting
 - Playful "design-editor" hero: selection boxes with handles, multiplayer cursor, pill labels, stickers and a toolbar around a mouse-tracking 3D portrait
 - Skill pills with soft cream glow + magnetic hover
-- Filterable project grid with FLIP layout animations and 3D tilt + glare on cards
+- Alternating project showcases with auto-playing, swipeable image decks (arrows, keyboard, 3D tilt), plus a filterable masonry wall of every piece
 - Project lightbox with gallery thumbnails, scope, deliverables and external links (Esc / backdrop to close, focus trap)
 - Vertical experience timeline with scroll progress line and fade-ins
+- Certifications grid with light-sweep hover cards
 - Contact form (opens the visitor's mail app pre-filled), copy-email button with toast, magnetic social icons
 - Custom cursor (fine pointers only), fully responsive, respects `prefers-reduced-motion`
 
 ## Personalising
 - **Name / bio / timeline / email / socials:** edit `index.html` (search for `hello@yourdomain.com`, `Year`, `School Name` and the social URLs).
 - **Hero stats:** `data-count` attributes in the hero.
-- **Projects:** edit the `projects` array at the top of `js/main.js`. Cards use generated placeholder artwork; add real images with
-  `images: ["assets/work/project-1.jpg", "assets/work/project-2.jpg", "assets/work/project-3.jpg"]`.
+- **Projects:** edit the `projects` array at the top of `js/main.js`. Each project shows as a showcase row with a flip-through image deck, and every image also appears in the "Every piece" gallery wall. Set `images: [...]`, `tags`, `links`, and `landscape: true` for website screenshots (adds a browser frame).
+- **Certifications:** edit the `certifications` array in `js/main.js` — `{ title, issuer, date, url?, image? }`. Remove `placeholder: true` once filled in.
 - **Portrait:** replace `assets/portrait.webp`.
 
 ## Logo

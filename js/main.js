@@ -18,18 +18,35 @@
      `images: ["assets/work/xyz-1.jpg", ...]` on any project.
      ======================================================= */
   const CATEGORY_LABEL = {
-    branding: "Visual Branding",
     uiux: "UI/UX & Web",
     social: "Esports & Social Media",
-    vector: "Vector Art & Layouts",
   };
 
   const projects = [
     {
+      id: "ptsi",
+      tags: ["Web Design", "Front-end", "Responsive", "Vercel"],
+      landscape: true,
+      title: "PTSI Corporate Website",
+      category: "uiux",
+      summary: "Corporate website for an IT solutions company since 1993.",
+      description: "A modern corporate website for Productivity Technologies Services, Inc. (PTSI), an IT products and services provider since 1993. Bold navy-and-amber branding, a clear “Solutions that Transform” message and an embedded company video present over three decades of experience with confidence.",
+      client: "Productivity Technologies Services, Inc.",
+      year: "2026",
+      role: "Web Designer & Developer",
+      scope: "Site structure and navigation, hero and page design, responsive front-end development and deployment — covering About Us, Partners, Products, Services, News, Careers and Contact.",
+      deliverables: ["Information architecture & navigation", "Hero with company video", "Products, services & partners pages", "News, careers & contact pages", "Responsive build deployed on Vercel"],
+      links: [{ label: "Visit Live Site", url: "https://ptsiwebsite.vercel.app" }],
+      images: ["assets/work/web/ptsi-home.webp"],
+      cover: "30% 50%",
+      art: ["ui"],
+      mark: "PT",
+    },
+    {
       id: "aurora-match-day",
+      tags: ["Photoshop", "Photo Manipulation", "Templates", "Esports"],
       title: "Aurora Gaming — Match Day",
       category: "social",
-      wide: true,
       summary: "Match results, schedules and hype posters for MPL PH Season 18.",
       description: "Match-day graphics for Aurora Gaming in MPL Philippines Season 18 — from pre-game hype to final scores. Every post shares one cinematic teal system, so wins, losses and announcements all feel unmistakably Aurora in the feed.",
       client: "Aurora Gaming",
@@ -44,22 +61,8 @@
       mark: "AG",
     },
     {
-      id: "kopi-senja",
-      title: "Kopi Senja Identity",
-      category: "branding",
-      summary: "Warm, nostalgic identity for an artisan coffee roaster.",
-      description: "A full brand identity for a small-batch coffee roaster — rooted in sunset tones and hand-drawn type to feel crafted, local and warm.",
-      client: "Kopi Senja",
-      year: "2025",
-      role: "Brand Designer",
-      scope: "Brand strategy workshop, logo exploration, identity system and packaging rollout across retail and social touchpoints.",
-      deliverables: ["Primary & secondary logo suite", "Colour + typography system", "Jar label & cup packaging", "Brand guidelines (32 pages)"],
-      links: [{ label: "View on Behance", url: "https://www.behance.net/" }],
-      art: ["brand", "packaging", "brand"],
-      mark: "KS",
-    },
-    {
       id: "bsaid",
+      tags: ["Game UI", "Pixel Art", "Front-end", "Vercel"],
       landscape: true,
       title: "BSAid — FAR1 Visual Novel",
       category: "uiux",
@@ -77,26 +80,8 @@
       mark: "BS",
     },
     {
-      id: "ptsi",
-      landscape: true,
-      title: "PTSI Corporate Website",
-      category: "uiux",
-      wide: true,
-      summary: "Corporate website for an IT solutions company since 1993.",
-      description: "A modern corporate website for Productivity Technologies Services, Inc. (PTSI), an IT products and services provider since 1993. Bold navy-and-amber branding, a clear “Solutions that Transform” message and an embedded company video present over three decades of experience with confidence.",
-      client: "Productivity Technologies Services, Inc.",
-      year: "2026",
-      role: "Web Designer & Developer",
-      scope: "Site structure and navigation, hero and page design, responsive front-end development and deployment — covering About Us, Partners, Products, Services, News, Careers and Contact.",
-      deliverables: ["Information architecture & navigation", "Hero with company video", "Products, services & partners pages", "News, careers & contact pages", "Responsive build deployed on Vercel"],
-      links: [{ label: "Visit Live Site", url: "https://ptsiwebsite.vercel.app" }],
-      images: ["assets/work/web/ptsi-home.webp"],
-      cover: "30% 50%",
-      art: ["ui"],
-      mark: "PT",
-    },
-    {
       id: "aurora-road-to-100k",
+      tags: ["Campaign", "Compositing", "Social Media"],
       title: "Aurora Gaming — Road to 100K",
       category: "social",
       summary: "Follower milestone campaign, from cinematic to LEGO.",
@@ -114,6 +99,7 @@
     },
     {
       id: "aurora-hero-builds",
+      tags: ["Layout", "Compositing", "MLBB"],
       title: "Aurora Gaming — Hero Build Guides",
       category: "social",
       summary: "MLBB hero build & emblem guides featuring the roster.",
@@ -129,66 +115,16 @@
       art: ["esports"],
       mark: "AG",
     },
-    {
-      id: "wildlines",
-      title: "Wildlines Vector Series",
-      category: "vector",
-      summary: "Personal series of flat vector landscapes and characters.",
-      description: "An ongoing personal series exploring limited palettes, bold silhouettes and geometric simplification in Adobe Illustrator.",
-      client: "Personal Project",
-      year: "2023",
-      role: "Illustrator",
-      scope: "Concept sketches, vector illustration, print preparation and merchandise mockups.",
-      deliverables: ["12 vector illustrations", "Poster print set", "Sticker sheet", "Wallpaper pack"],
-      links: [{ label: "View on Behance", url: "https://www.behance.net/" }],
-      art: ["vector", "vector", "character"],
-      mark: "W",
-    },
-    {
-      id: "brand-book",
-      title: "Brand Profile Book",
-      category: "vector",
-      summary: "Company profile book with an editorial grid system.",
-      description: "A printed and digital company profile combining photography, infographics and a strict typographic grid.",
-      client: "Corporate Client",
-      year: "2023",
-      role: "Layout Designer",
-      scope: "Content structuring, editorial grid, infographic design and print production files.",
-      deliverables: ["48-page profile book", "Infographic set", "Print-ready PDF", "Interactive PDF version"],
-      links: [{ label: "Read Online", url: "https://issuu.com/" }],
-      art: ["layout", "layout", "brand"],
-      mark: "BP",
-    },
-    {
-      id: "terra-goods",
-      title: "Terra Goods Packaging",
-      category: "branding",
-      summary: "Eco-friendly label system for a pantry goods line.",
-      description: "A modular label system that lets a growing product line stay recognisable while every flavour gets its own personality.",
-      client: "Terra Goods",
-      year: "2023",
-      role: "Packaging Designer",
-      scope: "Label architecture, illustration accents, dieline preparation and retail shelf mockups.",
-      deliverables: ["8 jar label designs", "Dielines & print specs", "Shelf & e-commerce mockups"],
-      links: [{ label: "View on Behance", url: "https://www.behance.net/" }],
-      art: ["packaging", "brand", "packaging"],
-      mark: "TG",
-    },
-    {
-      id: "character-mascot",
-      title: "Mascot & Character Design",
-      category: "vector",
-      summary: "Friendly mascot for a student community brand.",
-      description: "A playful mascot with a full expression sheet, designed to bring personality to event posters and social content.",
-      client: "Student Community",
-      year: "2022",
-      role: "Illustrator",
-      scope: "Character exploration, turnaround sheet, expression set and usage guide.",
-      deliverables: ["Character turnaround", "10-pose expression sheet", "Sticker pack", "Usage guide"],
-      links: [{ label: "View on Behance", url: "https://www.behance.net/" }],
-      art: ["character", "vector", "character"],
-      mark: "M",
-    },
+  ];
+
+  /* =======================================================
+     Certifications — add one object per certificate.
+     `url` (verify link) and `image` (certificate scan) are optional.
+     ======================================================= */
+  const certifications = [
+    { title: "Certificate name", issuer: "Issuing organization", date: "2026", placeholder: true },
+    { title: "Certificate name", issuer: "Issuing organization", date: "2026", placeholder: true },
+    { title: "Certificate name", issuer: "Issuing organization", date: "2026", placeholder: true },
   ];
 
   /* =======================================================
@@ -342,25 +278,145 @@
       : makeArt(p.art[i % p.art.length], p.mark, i);
 
   /* =======================================================
-     Render project cards
+     Render project showcases (alternating rows with an image deck)
      ======================================================= */
   const grid = $("#projectGrid");
+  const wall = $("#workWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+  const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
+  const pad = (n) => String(n).padStart(2, "0");
+  const host = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const imageCount = (p) => (p.images ? p.images.length : 1);
 
-  grid.innerHTML = projects.map((p, i) => `
-    <article class="project-card${p.wide ? " is-wide" : ""}" data-cat="${p.category}" data-reveal style="--d:${(i % 3) * 0.08}s">
-      <button class="card-inner" data-project="${p.id}" data-tilt-card aria-label="Open project: ${p.title}">
-        <div class="card-media">${mediaFor(p, 0)}</div>
-        <div class="card-body">
-          <div>
-            <span class="tag">${CATEGORY_LABEL[p.category]}</span>
-            <h3>${p.title}</h3>
-            <p>${p.summary}</p>
-          </div>
-          <span class="card-arrow">${arrowSVG}</span>
+  grid.innerHTML = projects.map((p, i) => {
+    const n = imageCount(p);
+    const site = p.landscape && p.links && p.links[0];
+    const slides = Array.from({ length: n }, (_, k) =>
+      `<div class="sc-slide" data-pos="${k}">${mediaFor(p, k)}</div>`).join("");
+    return `
+    <article class="showcase${p.landscape ? " is-landscape" : ""}" data-cat="${p.category}" data-id="${p.id}" data-reveal>
+      <div class="sc-stage-wrap">
+        <div class="sc-stage" data-tilt-card data-slides="${n}" data-current="0" role="button" tabindex="0"
+             aria-label="Open project: ${p.title}">
+          ${site ? `<div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>${host(site.url)}</span></div>` : ""}
+          <div class="sc-deck">${slides}</div>
         </div>
-      </button>
-    </article>`).join("");
+        ${n > 1 ? `
+        <div class="sc-controls">
+          <button class="sc-btn" data-step="-1" aria-label="Previous image">${chevron(-1)}</button>
+          <span class="sc-counter"><b>01</b> / ${pad(n)}</span>
+          <button class="sc-btn" data-step="1" aria-label="Next image">${chevron(1)}</button>
+          <span class="sc-progress" aria-hidden="true"><i></i></span>
+        </div>` : ""}
+      </div>
+      <div class="sc-info">
+        <span class="sc-index" aria-hidden="true">${pad(i + 1)}</span>
+        <span class="tag">${CATEGORY_LABEL[p.category]}</span>
+        <h3 class="sc-title">${p.title}</h3>
+        <p class="sc-desc">${p.description}</p>
+        <dl class="sc-meta">
+          <div><dt>Client</dt><dd>${p.client}</dd></div>
+          <div><dt>Role</dt><dd>${p.role}</dd></div>
+          <div><dt>Year</dt><dd>${p.year}</dd></div>
+        </dl>
+        <ul class="sc-tags">${(p.tags || []).map((t) => `<li>${t}</li>`).join("")}</ul>
+        <div class="sc-actions">
+          <button class="btn btn-sm btn-primary" data-project="${p.id}" data-magnetic>View case study ${arrowSVG}</button>
+          ${site ? `<a class="btn btn-sm btn-ghost" href="${site.url}" target="_blank" rel="noopener" data-magnetic>Visit live site ↗</a>` : ""}
+        </div>
+      </div>
+    </article>`;
+  }).join("");
+
+  // Every image as its own tile in a masonry wall
+  const wallItems = projects.flatMap((p) =>
+    Array.from({ length: imageCount(p) }, (_, k) => ({ p, k })));
+  wall.innerHTML = wallItems.map(({ p, k }, i) => `
+    <button class="wall-item${p.landscape ? " is-landscape" : ""}" data-project="${p.id}" data-index="${k}" data-cat="${p.category}"
+            data-reveal style="--d:${(i % 4) * 0.06}s" aria-label="Open ${p.title}, image ${k + 1}">
+      ${mediaFor(p, k).replace(/ style="object-position:[^"]*"/, "")}
+      <span class="wall-cap"><b>${p.title}</b><small>${CATEGORY_LABEL[p.category]}</small></span>
+    </button>`).join("");
+  $("#wallCount").textContent = wallItems.length;
+
+  // Certificates
+  $("#certGrid").innerHTML = certifications.map((c, i) => {
+    const tagName = c.url ? "a" : "div";
+    const attrs = c.url ? ` href="${c.url}" target="_blank" rel="noopener"` : "";
+    return `
+    <${tagName} class="cert${c.placeholder ? " is-placeholder" : ""}"${attrs} data-tilt data-reveal style="--d:${i * 0.08}s">
+      <div class="cert-media">${c.image
+        ? `<img src="${c.image}" alt="${c.title} certificate" loading="lazy" />`
+        : `<svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>`}</div>
+      <div class="cert-body">
+        <span class="cert-date">${c.date}</span>
+        <h3>${c.title}</h3>
+        <p>${c.issuer}</p>
+        ${c.url ? `<span class="cert-link">Verify credential ↗</span>` : ""}
+      </div>
+    </${tagName}>`;
+  }).join("");
+
+  /* ---- image decks: arrows, swipe, keyboard, autoplay while visible ---- */
+  const AUTOPLAY_MS = 3600;
+  const setDeck = (stage, next) => {
+    const n = +stage.dataset.slides;
+    const cur = ((next % n) + n) % n;
+    stage.dataset.current = cur;
+    $$(".sc-slide", stage).forEach((sl, k) => { sl.dataset.pos = (k - cur + n) % n; });
+    const wrap = stage.closest(".sc-stage-wrap");
+    const counter = wrap && $(".sc-counter b", wrap);
+    if (counter) counter.textContent = pad(cur + 1);
+    const bar = wrap && $(".sc-progress i", wrap);
+    if (bar) { bar.style.animation = "none"; void bar.offsetWidth; bar.style.animation = ""; }
+  };
+
+  $$(".showcase").forEach((row) => {
+    const stage = $(".sc-stage", row);
+    const n = +stage.dataset.slides;
+    const open = () => openModal(row.dataset.id, stage, +stage.dataset.current);
+    stage.addEventListener("click", open);
+    stage.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      if (n > 1 && e.key === "ArrowRight") setDeck(stage, +stage.dataset.current + 1);
+      if (n > 1 && e.key === "ArrowLeft") setDeck(stage, +stage.dataset.current - 1);
+    });
+    if (n < 2) return;
+
+    $$(".sc-btn", row).forEach((b) => b.addEventListener("click", () => {
+      setDeck(stage, +stage.dataset.current + +b.dataset.step);
+      row.classList.add("is-paused-by-user");
+    }));
+
+    // swipe
+    let sx = null;
+    stage.addEventListener("pointerdown", (e) => { sx = e.clientX; });
+    stage.addEventListener("pointerup", (e) => {
+      if (sx === null) return;
+      const dx = e.clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) {
+        stage.dataset.swiped = "1";
+        setDeck(stage, +stage.dataset.current + (dx < 0 ? 1 : -1));
+        row.classList.add("is-paused-by-user");
+      }
+    });
+    stage.addEventListener("click", (e) => {
+      if (stage.dataset.swiped) { e.stopImmediatePropagation(); delete stage.dataset.swiped; }
+    }, true);
+
+    // autoplay only while on screen and not hovered
+    if (reduceMotion) { row.classList.add("no-autoplay"); return; }
+    let timer = null;
+    const tick = () => {
+      if (!row.matches(":hover") && !row.classList.contains("is-paused-by-user") && !document.hidden)
+        setDeck(stage, +stage.dataset.current + 1);
+    };
+    new IntersectionObserver(([en]) => {
+      clearInterval(timer);
+      row.classList.toggle("is-playing", en.isIntersecting);
+      if (en.isIntersecting) timer = setInterval(tick, AUTOPLAY_MS);
+    }, { threshold: 0.45 }).observe(row);
+  });
 
   /* =======================================================
      Header: scrolled state + active section highlighting
@@ -460,38 +516,21 @@
   };
 
   const applyFilter = (cat) => {
-    const cards = $$(".project-card", grid);
-    const first = new Map(cards.map((c) => [c, c.getBoundingClientRect()]));
-    const wasHidden = new Map(cards.map((c) => [c, c.classList.contains("is-hidden")]));
-
-    cards.forEach((c) => {
-      const show = cat === "all" || c.dataset.cat === cat;
-      c.classList.toggle("is-hidden", !show);
-      c.classList.add("is-visible"); // make sure reveal state doesn't hide them
-    });
-
-    if (reduceMotion) return;
-
-    cards.forEach((c, i) => {
-      if (c.classList.contains("is-hidden")) return;
-      if (wasHidden.get(c)) {
-        c.animate(
-          [{ opacity: 0, transform: "translateY(24px) scale(.94)" }, { opacity: 1, transform: "none" }],
-          { duration: 550, easing: EASE, delay: i * 40, fill: "backwards" }
-        );
-        return;
-      }
-      const a = first.get(c), b = c.getBoundingClientRect();
-      const dx = a.left - b.left, dy = a.top - b.top;
-      const sx = a.width / b.width, sy = a.height / b.height;
-      if (dx || dy || sx !== 1 || sy !== 1) {
-        c.animate(
-          [{ transformOrigin: "top left", transform: `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})` },
-           { transformOrigin: "top left", transform: "none" }],
-          { duration: 600, easing: EASE }
+    const items = [...$$(".showcase", grid), ...$$(".wall-item", wall)];
+    let shown = 0;
+    items.forEach((el) => {
+      const show = cat === "all" || el.dataset.cat === cat;
+      const wasHidden = el.classList.contains("is-hidden");
+      el.classList.toggle("is-hidden", !show);
+      el.classList.add("is-visible"); // make sure reveal state doesn't hide them
+      if (show && wasHidden && !reduceMotion) {
+        el.animate(
+          [{ opacity: 0, transform: "translateY(28px) scale(.97)" }, { opacity: 1, transform: "none" }],
+          { duration: 600, easing: EASE, delay: (shown++ % 6) * 50, fill: "backwards" }
         );
       }
     });
+    $("#wallCount").textContent = $$(".wall-item:not(.is-hidden)", wall).length;
   };
 
   filters.forEach((btn) => btn.addEventListener("click", () => {
@@ -592,8 +631,8 @@
 
     document.addEventListener("pointerover", (e) => {
       const t = e.target;
-      document.body.classList.toggle("cursor-view", !!t.closest("[data-tilt-card]"));
-      document.body.classList.toggle("cursor-hover", !!t.closest("a, button, .pill, input, textarea, select, [data-tilt]") && !t.closest("[data-tilt-card]"));
+      document.body.classList.toggle("cursor-view", !!t.closest("[data-tilt-card], .wall-item"));
+      document.body.classList.toggle("cursor-hover", !!t.closest("a, button, .pill, input, textarea, select, [data-tilt]") && !t.closest("[data-tilt-card], .wall-item"));
     });
 
     $$("[data-magnetic]").forEach((el) => {
@@ -641,7 +680,7 @@
     });
   };
 
-  const openModal = (id, trigger) => {
+  const openModal = (id, trigger, start = 0) => {
     const p = projects.find((x) => x.id === id);
     if (!p) return;
     lastFocus = trigger || document.activeElement;
@@ -663,7 +702,7 @@
     $$("button", modalThumbs).forEach((b, i) => b.addEventListener("click", () => showSlide(p, i)));
     modalThumbs.hidden = count < 2;
     $(".modal-panel", modal).classList.toggle("is-stacked", !!p.landscape);
-    showSlide(p, 0);
+    showSlide(p, Math.min(start, count - 1));
 
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
@@ -681,10 +720,10 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  grid.addEventListener("click", (e) => {
+  [grid, wall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
-    if (btn) openModal(btn.dataset.project, btn);
-  });
+    if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
+  }));
   $$("[data-close]", modal).forEach((el) => el.addEventListener("click", closeModal));
 
   document.addEventListener("keydown", (e) => {

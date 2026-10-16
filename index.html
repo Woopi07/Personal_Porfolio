@@ -34,6 +34,7 @@
           <li><a href="#about" class="nav-link" data-magnetic>About</a></li>
           <li><a href="#work" class="nav-link" data-magnetic>Work</a></li>
           <li><a href="#experience" class="nav-link" data-magnetic>Experience</a></li>
+          <li><a href="#certifications" class="nav-link" data-magnetic>Certifications</a></li>
           <li><a href="#contact" class="nav-link" data-magnetic>Contact</a></li>
         </ul>
       </nav>
@@ -142,8 +143,8 @@
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Visual Branding</span><i>✦</i><span>UI/UX Design</span><i>✦</i><span>Esports Graphics</span><i>✦</i><span>Social Media</span><i>✦</i><span>Vector Art</span><i>✦</i><span>Editorial Layouts</span><i>✦</i>
-        <span>Visual Branding</span><i>✦</i><span>UI/UX Design</span><i>✦</i><span>Esports Graphics</span><i>✦</i><span>Social Media</span><i>✦</i><span>Vector Art</span><i>✦</i><span>Editorial Layouts</span><i>✦</i>
+        <span>UI/UX Design</span><i>✦</i><span>Front-end Development</span><i>✦</i><span>Esports Graphics</span><i>✦</i><span>Social Media</span><i>✦</i><span>Network Support</span><i>✦</i><span>Photo Manipulation</span><i>✦</i>
+        <span>UI/UX Design</span><i>✦</i><span>Front-end Development</span><i>✦</i><span>Esports Graphics</span><i>✦</i><span>Social Media</span><i>✦</i><span>Network Support</span><i>✦</i><span>Photo Manipulation</span><i>✦</i>
       </div>
     </div>
 
@@ -173,7 +174,7 @@
             </p>
 
             <ul class="about-facts">
-              <li><span>Focus</span>UI · Front-end · Branding</li>
+              <li><span>Focus</span>UI · Front-end · Graphic Design</li>
               <li><span>Background</span>IT &amp; Systems Analysis</li>
               <li><span>Based in</span>Metro Manila, Philippines</li>
             </ul>
@@ -208,7 +209,7 @@
               <article class="service" data-tilt>
                 <span class="service-no">03</span>
                 <h4>Graphic Design</h4>
-                <p>Brand identities, social media and print layouts for real clients.</p>
+                <p>Esports match-day graphics, social campaigns and photo manipulation.</p>
               </article>
             </div>
           </div>
@@ -222,20 +223,26 @@
         <header class="section-head" data-reveal>
           <span class="section-index">02</span>
           <h2 class="section-title">Selected <em>Work</em></h2>
-          <p class="section-sub">A curated mix of branding, product and campaign work. Click any project for details.</p>
+          <p class="section-sub">Websites I’ve designed and built, and graphics for an MPL Philippines team. Flip through each project, or browse every piece below.</p>
         </header>
 
         <div class="filters" role="tablist" aria-label="Filter projects" data-reveal>
           <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-          <button class="filter" role="tab" aria-selected="false" data-filter="branding">Visual Branding</button>
           <button class="filter" role="tab" aria-selected="false" data-filter="uiux">UI/UX &amp; Web</button>
           <button class="filter" role="tab" aria-selected="false" data-filter="social">Esports &amp; Social Media</button>
-          <button class="filter" role="tab" aria-selected="false" data-filter="vector">Vector Art &amp; Layouts</button>
           <span class="filter-indicator" aria-hidden="true"></span>
         </div>
 
-        <div class="project-grid" id="projectGrid" aria-live="polite">
-          <!-- Cards rendered by js/main.js -->
+        <div class="showcase-list" id="projectGrid" aria-live="polite">
+          <!-- Project showcases rendered by js/main.js -->
+        </div>
+
+        <div class="wall-head" data-reveal>
+          <h3 class="wall-title">Every <em>piece</em></h3>
+          <p class="wall-count"><span id="wallCount">0</span> works · click any to open</p>
+        </div>
+        <div class="work-wall" id="workWall">
+          <!-- Every image, rendered by js/main.js -->
         </div>
       </div>
     </section>
@@ -246,7 +253,7 @@
         <header class="section-head" data-reveal>
           <span class="section-index">03</span>
           <h2 class="section-title">Experience <em>Timeline</em></h2>
-          <p class="section-sub">Freelance milestones, internships and leadership roles.</p>
+          <p class="section-sub">Where I study, design and work.</p>
         </header>
 
         <ol class="timeline" id="timeline">
@@ -254,43 +261,47 @@
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
               <span class="tl-date">Present</span>
-              <h3>Freelance Graphic Designer &amp; Front-end Developer</h3>
-              <p class="tl-org">Self-employed · Remote</p>
-              <p>Designing brand assets, social media content and web interfaces for clients — then building the responsive front-ends that bring them to life.</p>
-              <ul class="tl-tags"><li>Branding</li><li>Figma</li><li>React</li></ul>
+              <h3>4th Year Student</h3>
+              <p class="tl-org">Pamantasan ng Lungsod ng Valenzuela</p>
+              <p>Studying Information Technology with a focus on systems analysis — turning business requirements into clear, buildable systems.</p>
+              <ul class="tl-tags"><li>Information Technology</li><li>Systems Analysis</li></ul>
             </div>
           </li>
           <li class="tl-item" data-reveal>
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
-              <span class="tl-date">Year — Year</span>
-              <h3>Information Technology — Systems Analysis</h3>
-              <p class="tl-org">University / School Name</p>
-              <p>Requirements gathering, process modelling and system design — the foundation for turning business needs into clear, buildable interfaces.</p>
-              <ul class="tl-tags"><li>Systems Analysis</li><li>UML</li><li>Databases</li></ul>
+              <span class="tl-date">Feb 2026 — Present</span>
+              <h3>Graphic Designer</h3>
+              <p class="tl-org">Aurora Gaming</p>
+              <p>Designing match-day results, schedules, player features, follower campaigns and hero build guides for the team’s MPL Philippines Season 18 run.</p>
+              <ul class="tl-tags"><li>Esports</li><li>Social Media</li><li>Photoshop</li></ul>
             </div>
           </li>
           <li class="tl-item" data-reveal>
             <div class="tl-marker"></div>
             <div class="tl-card" data-tilt>
-              <span class="tl-date">Year</span>
-              <h3>Internship / Team Project</h3>
-              <p class="tl-org">Company or Organization</p>
-              <p>Describe a role here — e.g. designing UI for an internal tool, leading a capstone team, or shipping a client website.</p>
-              <ul class="tl-tags"><li>UI Design</li><li>Teamwork</li></ul>
-            </div>
-          </li>
-          <li class="tl-item" data-reveal>
-            <div class="tl-marker"></div>
-            <div class="tl-card" data-tilt>
-              <span class="tl-date">Year</span>
-              <h3>First Freelance Design Client</h3>
-              <p class="tl-org">Client Name</p>
-              <p>Where it started — a first paid design project that grew into an ongoing freelance practice.</p>
-              <ul class="tl-tags"><li>Logo Design</li><li>Social Media</li></ul>
+              <span class="tl-date">Jun 2026 — Oct 2026</span>
+              <h3>Technical &amp; Network Support Intern</h3>
+              <p class="tl-org">PTSI Philippines</p>
+              <p>Supported day-to-day IT operations at Productivity Technologies Services, Inc. — troubleshooting hardware, software and network issues.</p>
+              <ul class="tl-tags"><li>Technical Support</li><li>Networking</li><li>Troubleshooting</li></ul>
             </div>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="certs section" id="certifications">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="section-index">04</span>
+          <h2 class="section-title">Certifi<em>cations</em></h2>
+          <p class="section-sub">Courses and credentials that back up the work.</p>
+        </header>
+        <div class="cert-grid" id="certGrid">
+          <!-- Certificates rendered by js/main.js -->
+        </div>
       </div>
     </section>
 
@@ -298,7 +309,7 @@
     <section class="contact section" id="contact">
       <div class="container">
         <header class="section-head" data-reveal>
-          <span class="section-index">04</span>
+          <span class="section-index">05</span>
           <h2 class="section-title">Let’s build <em>together</em></h2>
         </header>
 
