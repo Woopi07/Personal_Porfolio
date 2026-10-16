@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Graphic &amp; UI/UX Designer</title>
+  <meta name="description" content="Portfolio of a Graphic & UI/UX Designer: visual branding, UI/UX prototyping, esports & social media design, vector art and layouts." />
+  <meta name="theme-color" content="#222831" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" data-magnetic aria-label="Back to top">
+        <span class="brand-mark">YN</span>
+        <span class="brand-name">Your&nbsp;Name</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#hero" class="nav-link" data-magnetic>Home</a></li>
+          <li><a href="#about" class="nav-link" data-magnetic>About</a></li>
+          <li><a href="#work" class="nav-link" data-magnetic>Work</a></li>
+          <li><a href="#experience" class="nav-link" data-magnetic>Experience</a></li>
+          <li><a href="#contact" class="nav-link" data-magnetic>Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn-sm btn-primary header-cta" data-magnetic>Let’s talk</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero section" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-glow"></div>
+        <div class="hero-grid"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal><span class="dot"></span> Available for freelance &amp; full-time roles</p>
+
+          <h1 class="hero-title" data-reveal style="--d:.08s">
+            <span class="line">Port<span class="outline">folio</span></span>
+            <span class="line small">Your Name</span>
+          </h1>
+
+          <p class="hero-role" data-reveal style="--d:.16s">
+            Graphic <span class="amp">&amp;</span> UI/UX Designer
+          </p>
+
+          <p class="hero-tagline" data-reveal style="--d:.24s">
+            I craft bold visual identities and intuitive digital experiences —
+            where sharp branding meets thoughtful interface design.
+          </p>
+
+          <div class="hero-actions" data-reveal style="--d:.32s">
+            <a href="#work" class="btn btn-primary" data-magnetic>
+              View My Work
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost" data-magnetic>Contact Me</a>
+          </div>
+
+          <dl class="hero-stats" data-reveal style="--d:.4s">
+            <div><dt>Projects</dt><dd><span data-count="40">0</span>+</dd></div>
+            <div><dt>Clients</dt><dd><span data-count="15">0</span>+</dd></div>
+            <div><dt>Years</dt><dd><span data-count="3">0</span>+</dd></div>
+          </dl>
+        </div>
+
+        <!-- Interactive visual anchor -->
+        <div class="hero-visual" data-reveal style="--d:.2s">
+          <div class="portrait-stage" id="portraitStage">
+            <div class="portrait-card">
+              <div class="portrait-frame layer" style="--z:30px">
+                <img src="assets/portrait.webp" alt="Portrait of the designer" width="1600" height="1067" />
+                <div class="portrait-tint"></div>
+              </div>
+              <div class="portrait-ring layer" style="--z:60px" aria-hidden="true"></div>
+              <div class="float-chip chip-a layer" style="--z:90px">
+                <span class="chip-ico">✦</span> Visual Branding
+              </div>
+              <div class="float-chip chip-b layer" style="--z:110px">
+                <span class="chip-ico">◐</span> UI/UX Prototyping
+              </div>
+              <div class="float-chip chip-c layer" style="--z:80px">
+                <span class="chip-ico">▲</span> Web Layouts
+              </div>
+              <div class="portrait-caption layer" style="--z:50px">
+                <span>Illustrator</span><span class="sep"></span><span>Graphic Designer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Visual Branding</span><i>✦</i><span>UI/UX Design</span><i>✦</i><span>Esports Graphics</span><i>✦</i><span>Social Media</span><i>✦</i><span>Vector Art</span><i>✦</i><span>Editorial Layouts</span><i>✦</i>
+        <span>Visual Branding</span><i>✦</i><span>UI/UX Design</span><i>✦</i><span>Esports Graphics</span><i>✦</i><span>Social Media</span><i>✦</i><span>Vector Art</span><i>✦</i><span>Editorial Layouts</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="section-index">01</span>
+          <h2 class="section-title">About <em>&amp;</em> Skills</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-bio" data-reveal>
+            <p class="lead">
+              I’m a multidisciplinary designer who turns ideas into
+              <mark>memorable brands</mark> and <mark>effortless interfaces</mark>.
+            </p>
+            <p>
+              My work spans visual branding — logos, identity systems and packaging —
+              through to UI/UX prototyping in Figma and responsive web layouts built
+              with modern front-end tools. I care about clear hierarchy, purposeful
+              typography and the small interactions that make a product feel alive.
+            </p>
+            <p>
+              Whether it’s a launch campaign for an esports team, a brand book for a
+              local business or a high-fidelity app prototype, I bring the same
+              obsession with detail and storytelling.
+            </p>
+
+            <ul class="about-facts">
+              <li><span>Focus</span>Branding · UI/UX · Web</li>
+              <li><span>Based in</span>Your City</li>
+              <li><span>Languages</span>English</li>
+            </ul>
+          </div>
+
+          <div class="about-skills" data-reveal style="--d:.1s">
+            <h3 class="mini-title">Skill Stack</h3>
+            <ul class="skill-pills">
+              <li class="pill" data-magnetic><span class="pill-ico">F</span>Figma</li>
+              <li class="pill" data-magnetic><span class="pill-ico">Ps</span>Adobe Photoshop</li>
+              <li class="pill" data-magnetic><span class="pill-ico">Ai</span>Adobe Illustrator</li>
+              <li class="pill" data-magnetic><span class="pill-ico">Cc</span>CapCut</li>
+              <li class="pill" data-magnetic><span class="pill-ico">Tw</span>Tailwind CSS</li>
+              <li class="pill" data-magnetic><span class="pill-ico">R</span>React</li>
+              <li class="pill" data-magnetic><span class="pill-ico">N</span>Next.js</li>
+            </ul>
+
+            <h3 class="mini-title">What I do</h3>
+            <div class="services">
+              <article class="service" data-tilt>
+                <span class="service-no">01</span>
+                <h4>Visual Branding</h4>
+                <p>Logos, identity systems, brand books &amp; packaging.</p>
+              </article>
+              <article class="service" data-tilt>
+                <span class="service-no">02</span>
+                <h4>UI/UX Prototyping</h4>
+                <p>User flows, wireframes and interactive hi-fi prototypes.</p>
+              </article>
+              <article class="service" data-tilt>
+                <span class="service-no">03</span>
+                <h4>Web Layout Design</h4>
+                <p>Responsive, editorial layouts ready for development.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work section" id="work">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="section-index">02</span>
+          <h2 class="section-title">Selected <em>Work</em></h2>
+          <p class="section-sub">A curated mix of branding, product and campaign work. Click any project for details.</p>
+        </header>
+
+        <div class="filters" role="tablist" aria-label="Filter projects" data-reveal>
+          <button class="filter is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="branding">Visual Branding</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="uiux">UI/UX &amp; Web</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="social">Esports &amp; Social Media</button>
+          <button class="filter" role="tab" aria-selected="false" data-filter="vector">Vector Art &amp; Layouts</button>
+          <span class="filter-indicator" aria-hidden="true"></span>
+        </div>
+
+        <div class="project-grid" id="projectGrid" aria-live="polite">
+          <!-- Cards rendered by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="section-index">03</span>
+          <h2 class="section-title">Experience <em>Timeline</em></h2>
+          <p class="section-sub">Freelance milestones, internships and leadership roles.</p>
+        </header>
+
+        <ol class="timeline" id="timeline">
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker"></div>
+            <div class="tl-card" data-tilt>
+              <span class="tl-date">2025 — Present</span>
+              <h3>Freelance Graphic &amp; UI/UX Designer</h3>
+              <p class="tl-org">Self-employed · Remote</p>
+              <p>Delivered brand identities, social campaigns and web prototypes for 15+ clients across F&amp;B, retail and gaming.</p>
+              <ul class="tl-tags"><li>Branding</li><li>Figma</li><li>Client Management</li></ul>
+            </div>
+          </li>
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker"></div>
+            <div class="tl-card" data-tilt>
+              <span class="tl-date">2024</span>
+              <h3>Design Intern — Creative Team</h3>
+              <p class="tl-org">Agency / Company Name</p>
+              <p>Produced feed designs and promotional content; one campaign series lifted engagement noticeably during the internship period.</p>
+              <ul class="tl-tags"><li>Social Media</li><li>Photoshop</li><li>CapCut</li></ul>
+            </div>
+          </li>
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker"></div>
+            <div class="tl-card" data-tilt>
+              <span class="tl-date">2023 — 2024</span>
+              <h3>Head of Creative — Esports Organization</h3>
+              <p class="tl-org">Student / Community Team</p>
+              <p>Led a small design team building match-day graphics, jersey concepts and stream overlays for tournament seasons.</p>
+              <ul class="tl-tags"><li>Leadership</li><li>Esports</li><li>Motion</li></ul>
+            </div>
+          </li>
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker"></div>
+            <div class="tl-card" data-tilt>
+              <span class="tl-date">2022</span>
+              <h3>First Freelance Brand Project</h3>
+              <p class="tl-org">Local Coffee Brand</p>
+              <p>Designed a complete identity — logo, jar labels and merchandise — that launched alongside the brand’s first store.</p>
+              <ul class="tl-tags"><li>Logo Design</li><li>Packaging</li></ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="section-index">04</span>
+          <h2 class="section-title">Let’s build <em>something</em></h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info" data-reveal>
+            <p class="lead">Have a project, role or idea in mind? I’d love to hear about it.</p>
+
+            <div class="email-box">
+              <span class="email-label">Email</span>
+              <a class="email-address" id="emailAddress" href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>
+              <button class="btn btn-sm btn-ghost copy-btn" id="copyEmail" data-magnetic>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                Copy Email
+              </button>
+            </div>
+
+            <ul class="socials" aria-label="Social links">
+              <li><a href="https://www.behance.net/" target="_blank" rel="noopener" class="social" data-magnetic aria-label="Behance">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 11.4c.9-.4 1.5-1.2 1.5-2.3C9.7 7 8.2 6 6.2 6H1v12h5.4c2.1 0 3.9-1 3.9-3.3 0-1.4-.8-2.6-2.1-3.3zM3.4 8h2.4c.9 0 1.6.4 1.6 1.3S6.8 10.7 5.9 10.7H3.4V8zm2.7 8H3.4v-3.2h2.8c1.1 0 1.8.5 1.8 1.6S7.2 16 6.1 16zM17.6 9.2c-2.6 0-4.4 1.9-4.4 4.5 0 2.7 1.7 4.5 4.4 4.5 2 0 3.4-.9 4-2.8h-2.1c-.2.6-1 1-1.8 1-1.3 0-2.1-.8-2.1-2.1h6.2c.2-2.8-1.3-5.1-4.2-5.1zm-2.1 3.6c.1-1.1.8-1.8 2-1.8 1.1 0 1.8.7 1.9 1.8h-3.9zM15 6.6h5v1.3h-5z"/></svg>
+              </a></li>
+              <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="social" data-magnetic aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+              </a></li>
+              <li><a href="https://github.com/" target="_blank" rel="noopener" class="social" data-magnetic aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+              </a></li>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social" data-magnetic aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.6c-.1-1.6-.4-3-1.6-4.2S17.7 1.9 16.1 1.8C14.5 1.7 9.5 1.7 7.9 1.8 6.3 1.9 4.9 2.2 3.7 3.4S2 6 2 7.6c-.1 1.6-.1 6.6 0 8.2.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.2-1.6.2-6.6.1-8.2zm-2.2 10.6a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.8.4s-4.5.1-5.8-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.8s-.1-4.5.4-5.8a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.8-.4s4.5-.1 5.8.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.8s.1 4.5-.4 5.8z"/></svg>
+              </a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate data-reveal style="--d:.1s">
+            <div class="field">
+              <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
+              <label for="name">Your name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" name="email" placeholder=" " autocomplete="email" required />
+              <label for="email">Email address</label>
+            </div>
+            <div class="field">
+              <select id="topic" name="topic">
+                <option>Branding project</option>
+                <option>UI/UX or website</option>
+                <option>Social media / esports</option>
+                <option>Job opportunity</option>
+                <option>Something else</option>
+              </select>
+              <label for="topic" class="static">Topic</label>
+            </div>
+            <div class="field">
+              <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+              <label for="message">Tell me about your project</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" data-magnetic>
+              Send Message
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form-note">Submitting opens your email app with the message pre-filled.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-big">Your&nbsp;Name<span>.</span></p>
+      <div class="footer-meta">
+        <p>© <span id="year"></span> Your Name. Designed &amp; built with care.</p>
+        <a href="#hero" class="back-top" data-magnetic>Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ PROJECT MODAL ============ -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" data-close aria-label="Close project details" data-magnetic>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="modal-media">
+        <div class="modal-hero" id="modalHero"></div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-body">
+        <span class="tag" id="modalTag"></span>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-desc" id="modalDesc"></p>
+        <dl class="modal-meta">
+          <div><dt>Client</dt><dd id="modalClient"></dd></div>
+          <div><dt>Year</dt><dd id="modalYear"></dd></div>
+          <div><dt>Role</dt><dd id="modalRole"></dd></div>
+        </dl>
+        <h4 class="mini-title">Scope</h4>
+        <p id="modalScope"></p>
+        <h4 class="mini-title">Deliverables</h4>
+        <ul class="deliverables" id="modalDeliverables"></ul>
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
