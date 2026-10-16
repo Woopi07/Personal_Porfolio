@@ -23,14 +23,14 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - Custom cursor (fine pointers only), fully responsive, respects `prefers-reduced-motion`
 
 ## Personalising
-- **Name / bio / timeline / email / socials:** edit `index.html` (search for `hello@yourdomain.com`, `Your City`, `Year`, `School Name` and the social URLs).
+- **Name / bio / timeline / email / socials:** edit `index.html` (search for `hello@yourdomain.com`, `Year`, `School Name` and the social URLs).
 - **Hero stats:** `data-count` attributes in the hero.
 - **Projects:** edit the `projects` array at the top of `js/main.js`. Cards use generated placeholder artwork; add real images with
   `images: ["assets/work/project-1.jpg", "assets/work/project-2.jpg", "assets/work/project-3.jpg"]`.
 - **Portrait:** replace `assets/portrait.webp`.
 
 ## Logo
-The **Mj** monogram lives in `assets/logo/`. The M's right leg is shared with a lowercase j — coloured in the accent so the two letters (and the two disciplines, development and design) visibly share one stroke. The j's dot is a square selection handle.
+The **Mj** monogram lives in `assets/logo/`: a bold geometric M (V-notch top, V counter below) set beside a j in the accent colour, with a diamond for the j's dot. Drawn as solid shapes, it stays crisp from billboard size down to a 16px favicon.
 
 | File | Use |
 |---|---|

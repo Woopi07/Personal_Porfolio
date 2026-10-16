@@ -206,7 +206,7 @@ main, .site-footer { position: relative; z-index: 2; }
 }
 .brand-mark svg { width: 40px; height: 40px; }
 .brand-dot { fill: var(--wine); }
-.brand-j { stroke: var(--wine); }
+.brand-j { fill: var(--wine); }
 .brand-name { font: 700 17px/1 var(--font-display); color: var(--cream); letter-spacing: .01em; }
 
 .nav ul { display: flex; gap: 4px; }
