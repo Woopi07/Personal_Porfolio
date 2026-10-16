@@ -889,7 +889,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 /* =========================================================
    Footer
    ========================================================= */
-.site-footer { position: relative; overflow: hidden; color: var(--cream); --serif: "DM Serif Display", Georgia, serif; --pixel: "Silkscreen", var(--font-mono); }
+.site-footer { position: relative; overflow: hidden; color: var(--cream); --serif: var(--font-hero); --pixel: var(--font-hero); }
 .site-footer :focus-visible { outline-color: var(--sand); }
 .site-footer a { transition: color .25s, opacity .25s; }
 
@@ -904,7 +904,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 .f-cam .cam-stand { fill: none; stroke: var(--sand); stroke-width: 3; stroke-linecap: round; }
 @keyframes camPan { 0%, 100% { rotate: -6deg; } 50% { rotate: 6deg; } }
 @keyframes camRec { 50% { opacity: .2; } }
-.f-pixel { font: 700 clamp(26px, 3.4vw, 44px)/1 var(--pixel); color: var(--cream); letter-spacing: .02em; }
+.f-pixel { font: 700 clamp(26px, 3.4vw, 44px)/1 var(--pixel); color: var(--cream); letter-spacing: .02em; text-transform: uppercase; }
 .f-socials { display: flex; gap: 12px; }
 .f-socials a {
   display: grid; place-items: center; width: 54px; height: 54px; border-radius: 14px;
@@ -918,9 +918,9 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 .f-main { background: radial-gradient(120% 80% at 50% 0%, #2a0707 0%, #0d0303 55%, var(--ink) 100%); padding-top: clamp(56px, 8vw, 96px); }
 .f-thanks {
   margin: 0 0 clamp(40px, 6vw, 72px); text-align: center;
-  font: 400 clamp(44px, 8.6vw, 140px)/1 var(--serif); letter-spacing: -.02em; color: var(--cream);
+  font: 700 clamp(40px, 7.4vw, 120px)/1 var(--serif); letter-spacing: -.01em; color: var(--cream); text-transform: uppercase;
 }
-.f-thanks em { font-style: italic; color: var(--sand); }
+.f-thanks em { display: block; font-style: normal; color: transparent; -webkit-text-stroke: 2px var(--sand); }
 
 .f-grid {
   display: grid; grid-template-columns: 150px repeat(4, minmax(0, 1fr)) minmax(240px, 1.5fr);
