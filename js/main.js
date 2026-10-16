@@ -59,35 +59,41 @@
       mark: "KS",
     },
     {
-      id: "pulse-app",
-      title: "Pulse Fitness App",
+      id: "bsaid",
+      landscape: true,
+      title: "BSAid — FAR1 Visual Novel",
       category: "uiux",
-      summary: "Habit-driven workout tracker, from research to hi-fi prototype.",
-      description: "A mobile fitness companion that turns workouts into streaks. Designed end-to-end in Figma with a reusable component library.",
-      client: "Concept / Case Study",
-      year: "2025",
-      role: "UI/UX Designer",
-      scope: "User interviews, journey mapping, low-fi wireframes, usability testing and an interactive high-fidelity prototype.",
-      deliverables: ["User flows & wireframes", "Design system (60+ components)", "Interactive Figma prototype", "Usability test report"],
-      links: [{ label: "Open Prototype", url: "https://www.figma.com/" }, { label: "Case Study", url: "https://www.behance.net/" }],
-      art: ["phone", "ui", "phone"],
-      mark: "P",
+      summary: "Retro pixel-art site for a game that teaches accounting.",
+      description: "The website for BSAid, a visual novel adventure that teaches Financial Accounting and Reporting 1 — one case file, one journal entry at a time. A retro arcade look (pixel clouds, neon grid, a game-style menu) turns a dry subject into something students want to click into.",
+      client: "BSAid",
+      year: "2026",
+      role: "Web Designer & Developer",
+      scope: "Visual direction, landing page and section design, responsive front-end build, and a playable in-browser menu with keyboard controls (↑↓ to select, Enter to confirm) leading into Case #01.",
+      deliverables: ["Retro pixel-art visual system", "Landing page with game-style menu", "About, Story, Gameplay, Case Files & Help sections", "Play-online & download flows", "Responsive build deployed on Vercel"],
+      links: [{ label: "Visit Live Site", url: "https://bs-aid-website.vercel.app" }],
+      images: ["assets/work/web/bsaid-home.webp"],
+      cover: "50% 40%",
+      art: ["ui"],
+      mark: "BS",
     },
     {
-      id: "lumen-studio",
-      title: "Lumen Studio Website",
+      id: "ptsi",
+      landscape: true,
+      title: "PTSI Corporate Website",
       category: "uiux",
       wide: true,
-      summary: "Editorial landing page for an architecture studio.",
-      description: "A calm, image-led website for an architecture practice, with a modular layout grid that scales from case studies to journal posts.",
-      client: "Lumen Studio",
-      year: "2024",
-      role: "Web Designer",
-      scope: "Information architecture, responsive layout design, motion guidelines and dev hand-off with Tailwind CSS tokens.",
-      deliverables: ["Sitemap & wireframes", "Desktop / tablet / mobile layouts", "Interaction specs", "Next.js + Tailwind build support"],
-      links: [{ label: "Live Site", url: "https://example.com/" }, { label: "GitHub", url: "https://github.com/" }],
-      art: ["ui", "layout", "ui"],
-      mark: "L",
+      summary: "Corporate website for an IT solutions company since 1993.",
+      description: "A modern corporate website for Productivity Technologies Services, Inc. (PTSI), an IT products and services provider since 1993. Bold navy-and-amber branding, a clear “Solutions that Transform” message and an embedded company video present over three decades of experience with confidence.",
+      client: "Productivity Technologies Services, Inc.",
+      year: "2026",
+      role: "Web Designer & Developer",
+      scope: "Site structure and navigation, hero and page design, responsive front-end development and deployment — covering About Us, Partners, Products, Services, News, Careers and Contact.",
+      deliverables: ["Information architecture & navigation", "Hero with company video", "Products, services & partners pages", "News, careers & contact pages", "Responsive build deployed on Vercel"],
+      links: [{ label: "Visit Live Site", url: "https://ptsiwebsite.vercel.app" }],
+      images: ["assets/work/web/ptsi-home.webp"],
+      cover: "30% 50%",
+      art: ["ui"],
+      mark: "PT",
     },
     {
       id: "aurora-road-to-100k",
@@ -623,7 +629,12 @@
   let lastFocus = null;
 
   const showSlide = (p, i) => {
-    modalHero.innerHTML = mediaFor(p, i);
+    const site = p.landscape && p.links && p.links[0];
+    const bar = site
+      ? `<div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>${site.url.replace(/^https?:\/\//, "")}</span></div>`
+      : "";
+    modalHero.innerHTML = bar + mediaFor(p, i);
+    modalHero.classList.toggle("is-browser", !!site);
     $$("button", modalThumbs).forEach((b, j) => {
       b.classList.toggle("is-active", j === i);
       b.setAttribute("aria-pressed", String(j === i));
@@ -650,6 +661,8 @@
     modalThumbs.innerHTML = Array.from({ length: count }, (_, i) =>
       `<button type="button" aria-label="Show image ${i + 1}">${mediaFor(p, i)}</button>`).join("");
     $$("button", modalThumbs).forEach((b, i) => b.addEventListener("click", () => showSlide(p, i)));
+    modalThumbs.hidden = count < 2;
+    $(".modal-panel", modal).classList.toggle("is-stacked", !!p.landscape);
     showSlide(p, 0);
 
     modal.classList.add("is-open");
