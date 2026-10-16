@@ -28,3 +28,14 @@ A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.
 - **Projects:** edit the `projects` array at the top of `js/main.js`. Cards use generated placeholder artwork; add real images with
   `images: ["assets/work/project-1.jpg", "assets/work/project-2.jpg", "assets/work/project-3.jpg"]`.
 - **Portrait:** replace `assets/portrait.webp`.
+
+## Logo
+The **Mj** monogram lives in `assets/logo/`: the M's right leg flows into the hook of a lowercase j, and the j's dot is a square selection handle (developer + designer).
+
+| File | Use |
+|---|---|
+| `mj-logo-black.svg` / `-1024.png` | Primary — black tile (also `favicon.svg`) |
+| `mj-logo-wine.svg` / `-1024.png` | Wine tile — social avatars, stickers |
+| `mj-logo-sand.svg` / `-1024.png` | Sand tile — light contexts |
+| `mj-mark-cream.svg` | Transparent mark for dark backgrounds |
+| `mj-mark-black.svg` | Transparent mark for light backgrounds |
