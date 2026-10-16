@@ -19,10 +19,10 @@
   --sand-rgb: 232, 201, 153;
   --cream-rgb: 248, 238, 223;
 
-  --font-display: "Roboto", system-ui, sans-serif;  /* headings */
-  --font-body: "Montserrat", system-ui, sans-serif;  /* paragraphs */
-  --font-hero: "Roboto", system-ui, sans-serif;  /* big display headings */
-  --font-mono: "Roboto Mono", ui-monospace, monospace;
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-hero: "Fredoka", "Syne", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 
   --radius-sm: 10px;
   --radius: 18px;
@@ -486,7 +486,7 @@ mark { background: none; color: var(--cream); box-shadow: inset 0 -.38em 0 rgba(
   font: 600 22px/1 var(--font-hero); color: var(--cream);
 }
 .card-label .diamond { color: var(--sand); font-size: 18px; }
-.about-bio p:not(.lead) { font-size: 15px; line-height: 1.75; }
+.about-bio p:not(.lead) { font-family: var(--font-mono); font-size: 14px; line-height: 1.75; }
 
 /* Marquee */
 .marquee {
@@ -889,7 +889,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 /* =========================================================
    Footer
    ========================================================= */
-.site-footer { position: relative; overflow: hidden; color: var(--cream); --serif: var(--font-display); --pixel: var(--font-display); }
+.site-footer { position: relative; overflow: hidden; color: var(--cream); --serif: "DM Serif Display", Georgia, serif; --pixel: "Silkscreen", var(--font-mono); }
 .site-footer :focus-visible { outline-color: var(--sand); }
 .site-footer a { transition: color .25s, opacity .25s; }
 
@@ -904,7 +904,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 .f-cam .cam-stand { fill: none; stroke: var(--sand); stroke-width: 3; stroke-linecap: round; }
 @keyframes camPan { 0%, 100% { rotate: -6deg; } 50% { rotate: 6deg; } }
 @keyframes camRec { 50% { opacity: .2; } }
-.f-pixel { font: 900 clamp(26px, 3.4vw, 44px)/1 var(--pixel); color: var(--cream); letter-spacing: .02em; text-transform: uppercase; }
+.f-pixel { font: 700 clamp(26px, 3.4vw, 44px)/1 var(--pixel); color: var(--cream); letter-spacing: .02em; }
 .f-socials { display: flex; gap: 12px; }
 .f-socials a {
   display: grid; place-items: center; width: 54px; height: 54px; border-radius: 14px;
@@ -918,7 +918,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 .f-main { background: radial-gradient(120% 80% at 50% 0%, #2a0707 0%, #0d0303 55%, var(--ink) 100%); padding-top: clamp(56px, 8vw, 96px); }
 .f-thanks {
   margin: 0 0 clamp(40px, 6vw, 72px); text-align: center;
-  font: 900 clamp(44px, 8vw, 128px)/1 var(--serif); letter-spacing: -.03em; color: var(--cream);
+  font: 400 clamp(44px, 8.6vw, 140px)/1 var(--serif); letter-spacing: -.02em; color: var(--cream);
 }
 .f-thanks em { font-style: italic; color: var(--sand); }
 

@@ -155,13 +155,13 @@
           <g transform="rotate(-10 140 170)">
             <rect x="50" y="110" width="180" height="108" rx="8" fill="${C.cream}"/>
             <circle cx="95" cy="164" r="26" fill="${C.ink}"/>
-            <text x="95" y="171" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="20" fill="${C.cream}">${mark}</text>
+            <text x="95" y="171" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="20" fill="${C.cream}">${mark}</text>
             <rect x="135" y="150" width="70" height="8" rx="4" fill="${C.ink}"/>
             <rect x="135" y="166" width="48" height="6" rx="3" fill="${C.sand}"/>
           </g>
           <g transform="rotate(8 280 180)">
             <rect x="200" y="120" width="160" height="96" rx="8" fill="${C.ink}" stroke="${C.sand}" stroke-opacity=".5"/>
-            <text x="280" y="178" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="34" fill="${C.cream}">${mark}</text>
+            <text x="280" y="178" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="34" fill="${C.cream}">${mark}</text>
           </g>`;
         break;
 
@@ -173,7 +173,7 @@
             <rect x="${x - 42}" y="${250 - h}" width="84" height="${h}" rx="14" fill="${C.cream}" opacity="${i === 1 ? 1 : .85}"/>
             <rect x="${x - 46}" y="${238 - h}" width="92" height="22" rx="6" fill="${C.sand}"/>
             <circle cx="${x}" cy="${250 - h / 2}" r="28" fill="${C.ink}"/>
-            <text x="${x}" y="${256 - h / 2}" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="15" fill="${C.cream}">${mark}</text>
+            <text x="${x}" y="${256 - h / 2}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="15" fill="${C.cream}">${mark}</text>
             <rect x="${x - 24}" y="${270 - h / 2 + 22}" width="48" height="5" rx="2.5" fill="${C.wine}"/>
           </g>`;
         }).join("") + `<rect x="0" y="250" width="400" height="50" fill="${C.ink}" opacity=".7"/>`;
@@ -184,8 +184,8 @@
           <rect x="34" y="34" width="332" height="232" rx="12" fill="${C.ink}" stroke="${C.sand}" stroke-opacity=".5"/>
           <rect x="34" y="34" width="332" height="26" rx="12" fill="${C.wine}"/>
           <circle cx="52" cy="47" r="4" fill="${C.sand}"/><circle cx="66" cy="47" r="4" fill="${C.sand}"/><circle cx="80" cy="47" r="4" fill="${C.cream}"/>
-          <text x="58" y="104" font-family="Roboto,sans-serif" font-weight="700" font-size="${v ? 22 : 28}" fill="${C.cream}">${v ? "STUDIO WORK" : "DESIGN THAT"}</text>
-          <text x="58" y="${v ? 128 : 134}" font-family="Roboto,sans-serif" font-weight="700" font-size="${v ? 22 : 28}" fill="none" stroke="${C.sand}">${v ? "& JOURNAL" : "MOVES."}</text>
+          <text x="58" y="104" font-family="Fredoka,sans-serif" font-weight="700" font-size="${v ? 22 : 28}" fill="${C.cream}">${v ? "STUDIO WORK" : "DESIGN THAT"}</text>
+          <text x="58" y="${v ? 128 : 134}" font-family="Fredoka,sans-serif" font-weight="700" font-size="${v ? 22 : 28}" fill="none" stroke="${C.sand}">${v ? "& JOURNAL" : "MOVES."}</text>
           <rect x="58" y="152" width="80" height="22" rx="11" fill="${C.cream}"/>
           <rect x="226" y="80" width="116" height="100" rx="10" fill="${C.sand}" opacity=".85"/>
           <circle cx="284" cy="130" r="26" fill="${C.cream}" opacity=".9"/>
@@ -199,13 +199,13 @@
           <g>
             <rect x="${x}" y="${y}" width="120" height="236" rx="22" fill="${C.ink}" stroke="${C.cream}" stroke-opacity=".6" stroke-width="2"/>
             <rect x="${x + 44}" y="${y + 10}" width="32" height="6" rx="3" fill="${C.wine}"/>
-            <text x="${x + 14}" y="${y + 44}" font-family="Roboto,sans-serif" font-weight="700" font-size="14" fill="${C.cream}">${i ? "Progress" : "Today"}</text>
+            <text x="${x + 14}" y="${y + 44}" font-family="Fredoka,sans-serif" font-weight="700" font-size="14" fill="${C.cream}">${i ? "Progress" : "Today"}</text>
             ${i
               ? `<circle cx="${x + 60}" cy="${y + 104}" r="36" fill="none" stroke="${C.wine}" stroke-width="10"/>
                  <circle cx="${x + 60}" cy="${y + 104}" r="36" fill="none" stroke="${C.cream}" stroke-width="10" stroke-dasharray="160 230" transform="rotate(-90 ${x + 60} ${y + 104})"/>
-                 <text x="${x + 60}" y="${y + 110}" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="16" fill="${C.cream}">72%</text>`
+                 <text x="${x + 60}" y="${y + 110}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="16" fill="${C.cream}">72%</text>`
               : `<rect x="${x + 14}" y="${y + 58}" width="92" height="64" rx="12" fill="${C.sand}"/>
-                 <text x="${x + 24}" y="${y + 98}" font-family="Roboto,sans-serif" font-weight="700" font-size="22" fill="${C.ink}">${mark}</text>`}
+                 <text x="${x + 24}" y="${y + 98}" font-family="Fredoka,sans-serif" font-weight="700" font-size="22" fill="${C.ink}">${mark}</text>`}
             ${[0, 1, 2].map((r) => `<rect x="${x + 14}" y="${y + 140 + r * 28}" width="92" height="20" rx="8" fill="${C.wine}"/><rect x="${x + 22}" y="${y + 148 + r * 28}" width="${30 + r * 14}" height="4" rx="2" fill="${C.cream}" opacity=".7"/>`).join("")}
           </g>`;
         }).join("");
@@ -216,10 +216,10 @@
           <polygon points="0,300 0,190 400,40 400,300" fill="${C.sand}" opacity=".2"/>
           <polygon points="0,300 0,240 400,120 400,300" fill="${C.wine}"/>
           <polygon points="150,40 250,40 220,260 120,260" fill="${C.cream}" opacity=".08"/>
-          <text x="200" y="${v ? 150 : 140}" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="${v ? 46 : 50}" font-style="italic" fill="${C.cream}">${v ? "VICTORY" : "MATCH DAY"}</text>
-          <text x="200" y="${v ? 190 : 190}" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="30" fill="none" stroke="${C.sand}" stroke-width="1.5">${mark} vs RX · 2—1</text>
+          <text x="200" y="${v ? 150 : 140}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="${v ? 46 : 50}" font-style="italic" fill="${C.cream}">${v ? "VICTORY" : "MATCH DAY"}</text>
+          <text x="200" y="${v ? 190 : 190}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="30" fill="none" stroke="${C.sand}" stroke-width="1.5">${mark} vs RX · 2—1</text>
           <rect x="140" y="214" width="120" height="26" rx="4" fill="${C.cream}" transform="skewX(-14)"/>
-          <text x="200" y="232" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="${C.ink}">LIVE 19:00</text>`;
+          <text x="200" y="232" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="12" letter-spacing="3" fill="${C.ink}">LIVE 19:00</text>`;
         break;
 
       case "social":
@@ -229,7 +229,7 @@
           const fill = [C.cream, C.sand, C.wine][(i + v) % 3];
           const ink = fill === C.cream ? C.ink : C.cream;
           const shape = i % 4 === 0
-            ? `<text x="${x + 44}" y="${y + 54}" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="22" fill="${ink}">${mark}</text>`
+            ? `<text x="${x + 44}" y="${y + 54}" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="22" fill="${ink}">${mark}</text>`
             : i % 4 === 1
               ? `<circle cx="${x + 44}" cy="${y + 44}" r="22" fill="${ink}" opacity=".85"/>`
               : i % 4 === 2
@@ -259,7 +259,7 @@
           <circle cx="178" cy="136" r="7" fill="${C.ink}"/><circle cx="222" cy="136" r="7" fill="${C.ink}"/>
           <path d="M184 160 q 16 ${v ? 18 : 12} 32 0" fill="none" stroke="${C.ink}" stroke-width="4" stroke-linecap="round"/>
           <circle cx="166" cy="154" r="8" fill="${C.sand}" opacity=".6"/><circle cx="234" cy="154" r="8" fill="${C.sand}" opacity=".6"/>
-          <text x="200" y="250" text-anchor="middle" font-family="Roboto,sans-serif" font-weight="700" font-size="26" fill="${C.ink}">${mark}</text>`;
+          <text x="200" y="250" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="26" fill="${C.ink}">${mark}</text>`;
         break;
 
       case "layout":
@@ -268,9 +268,9 @@
           <rect x="40" y="46" width="320" height="208" rx="4" fill="${C.cream}"/>
           <line x1="200" y1="46" x2="200" y2="254" stroke="${C.sand}" stroke-width="2"/>
           <rect x="56" y="64" width="128" height="96" fill="${v ? C.sand : C.wine}"/>
-          <text x="58" y="186" font-family="Roboto,sans-serif" font-weight="700" font-size="18" fill="${C.ink}">${v ? "OUR STORY" : "ANNUAL"}</text>
+          <text x="58" y="186" font-family="Fredoka,sans-serif" font-weight="700" font-size="18" fill="${C.ink}">${v ? "OUR STORY" : "ANNUAL"}</text>
           ${[0, 1, 2, 3].map((i) => `<rect x="58" y="${198 + i * 12}" width="${120 - (i % 2) * 30}" height="5" rx="2" fill="${C.wine}" opacity=".6"/>`).join("")}
-          <text x="216" y="96" font-family="Roboto,sans-serif" font-weight="700" font-size="34" fill="${C.ink}">${mark}</text>
+          <text x="216" y="96" font-family="Fredoka,sans-serif" font-weight="700" font-size="34" fill="${C.ink}">${mark}</text>
           ${[0, 1, 2, 3, 4, 5, 6].map((i) => `<rect x="216" y="${112 + i * 12}" width="${126 - (i % 3) * 22}" height="5" rx="2" fill="${C.wine}" opacity=".6"/>`).join("")}
           <rect x="216" y="204" width="60" height="34" fill="${C.sand}"/><rect x="282" y="204" width="60" height="34" fill="${C.ink}"/>`;
     }
