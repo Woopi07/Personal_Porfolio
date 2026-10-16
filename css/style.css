@@ -956,7 +956,7 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 }
 .f-badge { position: relative; display: grid; place-items: center; width: 150px; aspect-ratio: 1; }
 .f-blob { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--wine); animation: blobSpin 22s linear infinite; }
-.f-badge-m { position: relative; width: 62%; height: 62%; }
+.f-badge-m { position: absolute; left: 50%; top: 50%; width: 60%; height: 60%; translate: -50% -50%; }
 .f-badge-m path { fill: var(--cream); }
 .f-badge-m rect { fill: var(--sand); }
 .f-badge:hover .f-badge-m { animation: wiggle .6s var(--ease); }
