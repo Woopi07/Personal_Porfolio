@@ -45,3 +45,11 @@ The **M** logo lives in `assets/logo/`: a single bold geometric M (V-notch top, 
 | `mj-lockup-light.svg` / `.png` | Mark + name + title, for light backgrounds |
 
 The lockup text is outlined (Fredoka SemiBold converted to vector paths), so it renders identically everywhere without the font installed.
+
+## Résumé
+An ATS-friendly résumé (single column, standard headings, real text) is published at `assets/resume/Mj-Mallorca-Resume.pdf` and `.docx`, linked from the hero and Contact section. To update it, edit `scripts/build-resume.js`, then:
+
+```bash
+node scripts/build-resume.js assets/resume/Mj-Mallorca-Resume.docx
+soffice --headless --convert-to pdf --outdir assets/resume assets/resume/Mj-Mallorca-Resume.docx
+```
