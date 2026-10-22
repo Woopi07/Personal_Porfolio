@@ -834,8 +834,6 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 .copy-btn svg { fill: none; stroke: currentColor; stroke-width: 2; }
 .copy-btn:hover svg { transform: none; }
 
-.resume-box { margin: -12px 0 32px; display: grid; gap: 12px; }
-.resume-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn[download] svg { transition: transform .35s var(--ease); }
 .btn[download]:hover svg { transform: translateY(3px); }
 .socials { display: flex; gap: 14px; }
