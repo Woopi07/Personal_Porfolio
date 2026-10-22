@@ -116,6 +116,22 @@
       art: ["esports"],
       mark: "AG",
     },
+    {
+      id: "super-daddy",
+      title: "Super Daddy — Drink Posters",
+      category: "product",
+      summary: "Product posters for a milk tea and frappe brand.",
+      description: "Product posters for Super Daddy’s milk tea, cheesecake and frappe line. Each drink gets its own bold color world — navy for Oreo, crimson for Red Velvet, mocha for Classic, deep green for Matcha — with big headline type, clean product cutouts and clear price callouts that stop the scroll.",
+      client: "Super Daddy",
+      year: "2026",
+      role: "Graphic Designer",
+      scope: "Product photo cutouts and retouching, poster layouts, flavor callouts, price badges and bilingual (English–Filipino) copy layout for social media.",
+      deliverables: ["Oreo cheesecake milk tea poster", "Red Velvet cheesecake poster", "Classic cheesecake milk tea poster", "Matcha frappe poster"],
+      links: [],
+      images: ["assets/work/superdaddy/oreo-cheesecake.webp", "assets/work/superdaddy/red-velvet-cheesecake.webp", "assets/work/superdaddy/classic-cheesecake.webp", "assets/work/superdaddy/matcha-frappe.webp"],
+      art: ["social"],
+      mark: "SD",
+    },
   ];
 
   /* =======================================================
