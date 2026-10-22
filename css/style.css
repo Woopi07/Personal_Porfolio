@@ -836,7 +836,6 @@ button.cert-media { cursor: zoom-in; background: #f4f4f4; }
 
 .btn[download] svg { transition: transform .35s var(--ease); }
 .btn[download]:hover svg { transform: translateY(3px); }
-.socials { display: flex; gap: 14px; }
 .social {
   display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
   border: 1px solid rgba(var(--sand-rgb), .5); color: var(--cream);
