@@ -53,3 +53,6 @@ An ATS-friendly résumé (single column, standard headings, real text) is publis
 node scripts/build-resume.js assets/resume/Mj-Mallorca-Resume.docx
 soffice --headless --convert-to pdf --outdir assets/resume assets/resume/Mj-Mallorca-Resume.docx
 ```
+
+## Deploying updates
+`index.html` loads `css/style.css?v=…` and `js/main.js?v=…`. After changing either file, bump the `v=` value (e.g. to the latest commit hash) so browsers fetch the new version instead of a cached one.
