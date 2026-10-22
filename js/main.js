@@ -55,7 +55,7 @@
       scope: "Pre-game announcement posters, best-of-three result templates for wins and losses, defeat recap posters and the full Season 18 match schedule — built as reusable templates so posts could go live right after each match.",
       deliverables: ["Match result templates (win & loss)", "Defeat recap poster", "Season 18 match schedule", "“Battle of World Champions” match-day poster", "Sponsor-ready layouts (Infinix)"],
       links: [],
-      images: ["assets/work/aurora/victory-omega.webp", "assets/work/aurora/game-day-omega.webp", "assets/work/aurora/playoffs-tlph.webp", "assets/work/aurora/match-result.webp", "assets/work/aurora/world-champions.webp", "assets/work/aurora/match-result-loss.webp", "assets/work/aurora/defeat-poster.webp", "assets/work/aurora/match-schedule.webp"],
+      images: ["assets/work/aurora/result-tlph.webp", "assets/work/aurora/victory-omega.webp", "assets/work/aurora/game-day-omega.webp", "assets/work/aurora/playoffs-tlph.webp", "assets/work/aurora/match-result.webp", "assets/work/aurora/world-champions.webp", "assets/work/aurora/match-result-loss.webp", "assets/work/aurora/defeat-poster.webp", "assets/work/aurora/match-schedule.webp"],
       cover: "50% 18%",
       art: ["esports"],
       mark: "AG",
