@@ -20,6 +20,7 @@
   const CATEGORY_LABEL = {
     uiux: "UI/UX & Web",
     social: "Esports & Social Media",
+    product: "Product Design",
   };
 
   const projects = [
@@ -289,6 +290,7 @@
   const webList = $("#webList");
   const designList = $("#designList");
   const wall = $("#workWall");
+  const productWall = $("#productWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
   const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
   const pad = (n) => String(n).padStart(2, "0");
@@ -340,15 +342,30 @@
   designList.innerHTML = designProjects.map(showcaseHTML).join("");
 
   // Every image as its own tile in a masonry wall
-  const wallItems = designProjects.flatMap((p) =>
-    Array.from({ length: imageCount(p) }, (_, k) => ({ p, k })));
-  wall.innerHTML = wallItems.map(({ p, k }, i) => `
+  const wallTile = ({ p, k }, i) => `
     <button class="wall-item${p.landscape ? " is-landscape" : ""}" data-project="${p.id}" data-index="${k}" data-cat="${p.category}"
             data-reveal style="--d:${(i % 4) * 0.06}s" aria-label="Open ${p.title}, image ${k + 1}">
       ${mediaFor(p, k).replace(/ style="object-position:[^"]*"/, "")}
       <span class="wall-cap"><b>${p.title}</b><small>${CATEGORY_LABEL[p.category]}</small></span>
-    </button>`).join("");
+    </button>`;
+  const tilesOf = (list) => list.flatMap((p) => Array.from({ length: imageCount(p) }, (_, k) => ({ p, k })));
+
+  const wallItems = tilesOf(designProjects);
+  wall.innerHTML = wallItems.map(wallTile).join("");
   $("#wallCount").textContent = wallItems.length;
+
+  // Product designs: add projects with category "product" to show them here
+  const productItems = tilesOf(projects.filter((p) => p.category === "product"));
+  productWall.innerHTML = productItems.length
+    ? productItems.map(wallTile).join("")
+    : `<div class="wall-empty" data-reveal>
+         <svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>
+         <b>Product designs coming soon</b>
+         <span>Packaging, labels and product mockups will be featured here.</span>
+       </div>`;
+  productWall.classList.toggle("is-empty", !productItems.length);
+  $("#productCount").textContent = productItems.length;
+  $("#productCount").parentElement.hidden = !productItems.length;
 
   // Certificates
   const certLogo = `<svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>`;
@@ -700,7 +717,7 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  [webList, designList, wall].forEach((root) => root.addEventListener("click", (e) => {
+  [webList, designList, wall, productWall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
   }));
