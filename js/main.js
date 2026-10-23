@@ -165,6 +165,22 @@
       art: ["packaging"],
       mark: "SD",
     },
+    {
+      id: "sd-skin",
+      title: "SD Skin — Skincare Ads",
+      category: "cosmetics",
+      summary: "E-commerce and story ads for a skincare line.",
+      description: "Ads for SD Skin by Sugar Dolls. A square marketplace graphic for the SPF 50+ sunscreen — clean product cutout, benefit icons, face/body pills and a bundle tag — and a bold editorial story ad for the Rejuvenating Set, with an oversized two-tone “SKIN RESET” headline over the product photo.",
+      client: "SD Skin (Sugar Dolls)",
+      year: "2026",
+      role: "Graphic Designer",
+      scope: "Product cutouts and photo cleanup, layout and headline design, benefit callouts and icons, and exports for Shopee/Lazada listings and Instagram stories.",
+      deliverables: ["SPF 50+ sunscreen listing graphic (1080×1080)", "Rejuvenating Set “Skin Reset” story ad (1080×1920)"],
+      links: [],
+      images: ["assets/work/sdskin/spf50-sunscreen.webp", "assets/work/sdskin/skin-reset-set.webp"],
+      art: ["social"],
+      mark: "SD",
+    },
   ];
 
   /* =======================================================
