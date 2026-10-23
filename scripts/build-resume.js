@@ -67,13 +67,16 @@ const doc = new Document({
         ] }),
 
       heading("Professional Summary"),
-      para([run("Information Technology student and graphic designer who designs accessible digital interfaces and builds responsive front-end web applications that align with real business needs. Combines active graphic design work for an MPL Philippines esports team with hands-on IT and network support experience, turning complex requirements into clear visual prototypes, polished layouts and clean, scalable front-end code.")]),
+      para([run("Information Technology student and graphic designer who designs accessible digital interfaces and builds responsive front-end web applications that align with real business needs. Brings a year of graphic design for an MPL Philippines esports team, freelance product design for a milk tea brand, and hands-on IT and network support experience, turning complex requirements into clear visual prototypes, polished layouts and clean, scalable front-end code.")]),
 
       heading("Experience"),
-      ...entry("Graphic Designer — Aurora Gaming", "Feb 2026 – Present"),
+      ...entry("Graphic Designer — Aurora Gaming", "Oct 2025 – Present (1 yr)"),
       bullet("Design match-day graphics for MPL Philippines Season 18, including match results, pre-game announcements, defeat recaps and the season match schedule."),
       bullet("Create the “Road to 100K” follower-milestone campaign and Mobile Legends hero build and emblem guides featuring the team roster."),
       bullet("Build reusable templates so posts can be published right after each match, with sponsor-ready layouts for Infinix."),
+      ...entry("Freelance Graphic Designer — Super Daddy Milk Tea Shop", "May 2026 – Oct 2026 (6 mos)"),
+      bullet("Designed product posters for the shop’s milk tea, cheesecake, coffee and frappe line, including Oreo, Red Velvet, Classic, Iced Latte, Matcha and Mango drinks."),
+      bullet("Created social media promotions with product photo retouching, price callouts and bilingual (English–Filipino) copy, giving each drink its own bold color theme."),
       ...entry("Technical & Network Support Intern — PTSI Philippines", "Jun 2026 – Oct 2026", "Productivity Technologies Services, Inc."),
       bullet("Supported day-to-day IT operations, troubleshooting hardware, software and network issues."),
 
