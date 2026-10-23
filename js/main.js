@@ -21,7 +21,7 @@
     uiux: "UI/UX & Web",
     social: "Esports & Social Media",
     product: "Product Design",
-    cosmetics: "Cosmetics Advertising",
+    cosmetics: "Cosmetic Graphics",
   };
 
   const projects = [
@@ -130,6 +130,22 @@
       deliverables: ["Oreo cheesecake milk tea poster", "Red Velvet cheesecake poster", "Classic cheesecake milk tea poster", "Matcha frappe poster", "Iced latte poster", "“Which frappe are you today?” lineup post", "Mango frappe summer poster"],
       links: [],
       images: ["assets/work/superdaddy/oreo-cheesecake.webp", "assets/work/superdaddy/red-velvet-cheesecake.webp", "assets/work/superdaddy/classic-cheesecake.webp", "assets/work/superdaddy/matcha-frappe.webp", "assets/work/superdaddy/iced-latte.webp", "assets/work/superdaddy/frappe-lineup.webp", "assets/work/superdaddy/mango-frappe.webp"],
+      art: ["social"],
+      mark: "SD",
+    },
+    {
+      id: "sugar-dolls",
+      title: "Sugar Dolls — Perfume Ads",
+      category: "cosmetics",
+      summary: "Social media ads for a fragrance brand.",
+      description: "Vertical social media ads for Sugar Dolls eau de parfum. Each scent gets its own personality: soft pinks and a “soft hug in a bottle” line for Powder Puff, bold red and violet for Date Night, with playful stickers, hand-drawn circles and scent-tag pills that make the product feel fun and giftable.",
+      client: "Sugar Dolls",
+      year: "2026",
+      role: "Graphic Designer",
+      scope: "Story-format ad layouts, headline copy treatment, product compositing with packaging, sticker and doodle accents, and scent-note tags matched to each fragrance’s colors.",
+      deliverables: ["Powder Puff story ad", "Date Night story ad"],
+      links: [],
+      images: ["assets/work/sugardolls/powder-puff.webp", "assets/work/sugardolls/date-night.webp"],
       art: ["social"],
       mark: "SD",
     },
@@ -388,7 +404,7 @@
   };
   fillWall(productWall, "productCount", "product", "Product designs coming soon",
     "Packaging, labels and product mockups will be featured here.");
-  fillWall(cosmeticsWall, "cosmeticsCount", "cosmetics", "Cosmetics ads coming soon",
+  fillWall(cosmeticsWall, "cosmeticsCount", "cosmetics", "Cosmetic graphics coming soon",
     "Skincare and beauty campaigns, product ads and social creatives will be featured here.");
 
   // Certificates
