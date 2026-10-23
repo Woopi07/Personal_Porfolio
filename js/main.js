@@ -149,6 +149,22 @@
       art: ["social"],
       mark: "SD",
     },
+    {
+      id: "sugar-dolls-tint",
+      title: "Sugar Dolls — Lip & Cheek Gel Tint Packaging",
+      category: "cosmetics",
+      summary: "Packaging design and brand board for a lip & cheek tint.",
+      description: "Box packaging for Sugar Dolls Lip & Cheek Gel Tint. A dripping-cherry top panel, soft cream body and peach-to-lavender gradient make the product feel sweet and playful, while a clear hierarchy keeps the shade, benefits and usage easy to read. Designed as a system so new shades like Black Cherry slot right in.",
+      client: "Sugar Dolls",
+      year: "2026",
+      role: "Packaging Designer",
+      scope: "Full box dieline layout, product illustration, benefit icons, back-panel copy layout with barcode and regulatory areas, color palette and typography system, and 3D mockups for two shades.",
+      deliverables: ["Print-ready box dieline", "Color palette (Cherry, Peach, Lavender, Cream, Plum)", "Font panel (Lora, Chorus, Poppins)", "3D packaging mockups — Cherry & Black Cherry"],
+      links: [],
+      images: ["assets/work/sugardolls/tint-mockup.webp", "assets/work/sugardolls/tint-dieline.webp", "assets/work/sugardolls/tint-brand-board.webp"],
+      art: ["packaging"],
+      mark: "SD",
+    },
   ];
 
   /* =======================================================
