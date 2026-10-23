@@ -21,6 +21,7 @@
     uiux: "UI/UX & Web",
     social: "Esports & Social Media",
     product: "Product Design",
+    cosmetics: "Cosmetics Advertising",
   };
 
   const projects = [
@@ -307,6 +308,7 @@
   const designList = $("#designList");
   const wall = $("#workWall");
   const productWall = $("#productWall");
+  const cosmeticsWall = $("#cosmeticsWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
   const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
   const pad = (n) => String(n).padStart(2, "0");
@@ -370,18 +372,24 @@
   wall.innerHTML = wallItems.map(wallTile).join("");
   $("#wallCount").textContent = wallItems.length;
 
-  // Product designs: add projects with category "product" to show them here
-  const productItems = tilesOf(projects.filter((p) => p.category === "product"));
-  productWall.innerHTML = productItems.length
-    ? productItems.map(wallTile).join("")
-    : `<div class="wall-empty" data-reveal>
-         <svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>
-         <b>Product designs coming soon</b>
-         <span>Packaging, labels and product mockups will be featured here.</span>
-       </div>`;
-  productWall.classList.toggle("is-empty", !productItems.length);
-  $("#productCount").textContent = productItems.length;
-  $("#productCount").parentElement.hidden = !productItems.length;
+  // Category galleries: add projects with the matching category to fill them
+  const fillWall = (wallEl, countId, category, emptyTitle, emptyText) => {
+    const items = tilesOf(projects.filter((p) => p.category === category));
+    wallEl.innerHTML = items.length
+      ? items.map(wallTile).join("")
+      : `<div class="wall-empty" data-reveal>
+           <svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>
+           <b>${emptyTitle}</b>
+           <span>${emptyText}</span>
+         </div>`;
+    wallEl.classList.toggle("is-empty", !items.length);
+    $("#" + countId).textContent = items.length;
+    $("#" + countId).parentElement.hidden = !items.length;
+  };
+  fillWall(productWall, "productCount", "product", "Product designs coming soon",
+    "Packaging, labels and product mockups will be featured here.");
+  fillWall(cosmeticsWall, "cosmeticsCount", "cosmetics", "Cosmetics ads coming soon",
+    "Skincare and beauty campaigns, product ads and social creatives will be featured here.");
 
   // Certificates
   const certLogo = `<svg viewBox="0 0 120 120" aria-hidden="true"><g transform="translate(0 2)"><path d="M28 92V28H45L60 52L75 28H92V92H76V58L64 76H56L44 58V92Z"/><rect x="55" y="25" width="10" height="10" transform="rotate(45 60 30)"/></g></svg>`;
@@ -733,7 +741,7 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  [webList, designList, wall, productWall].forEach((root) => root.addEventListener("click", (e) => {
+  [webList, designList, wall, productWall, cosmeticsWall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
   }));
