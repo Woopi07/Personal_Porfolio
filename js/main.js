@@ -181,6 +181,22 @@
       art: ["social"],
       mark: "SD",
     },
+    {
+      id: "rise-and-rest",
+      title: "Sugar Dolls — Rise & Rest Capsules",
+      category: "cosmetics",
+      summary: "“What’s inside?” explainer ad for a wellness supplement.",
+      description: "A story-format explainer for Sugar Dolls’ Rise & Rest morning and night capsules. A bold “What’s inside?” headline, a grid-paper backdrop and color-matched speech bubbles break down each pouch’s key ingredients in a quick, friendly way, while a torn-paper accent echoes the orange night pouch.",
+      client: "Sugar Dolls",
+      year: "2026",
+      role: "Graphic Designer",
+      scope: "Product compositing, headline and speech-bubble layout, ingredient callouts and compliant product-info footer.",
+      deliverables: ["“What’s inside?” story ad (1080×1920)"],
+      links: [],
+      images: ["assets/work/sugardolls/rise-and-rest.webp"],
+      art: ["social"],
+      mark: "SD",
+    },
   ];
 
   /* =======================================================
