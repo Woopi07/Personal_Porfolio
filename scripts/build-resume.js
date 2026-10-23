@@ -72,7 +72,7 @@ const doc = new Document({
       heading("Experience"),
       ...entry("Graphic Designer — Aurora Gaming", "Oct 2025 – Present (1 yr)"),
       bullet("Design match-day graphics for MPL Philippines Season 18, including match results, pre-game announcements, defeat recaps and the season match schedule."),
-      bullet("Create the “Road to 100K” follower-milestone campaign and Mobile Legends hero build and emblem guides featuring the team roster."),
+      bullet("Create Mobile Legends hero build and emblem guides featuring the team roster."),
       bullet("Build reusable templates so posts can be published right after each match, with sponsor-ready layouts for Infinix."),
       ...entry("Technical & Network Support Intern — PTSI Philippines", "Jun 2026 – Oct 2026", "Productivity Technologies Services, Inc."),
       bullet("Supported day-to-day IT operations, troubleshooting hardware, software and network issues."),
