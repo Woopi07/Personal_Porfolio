@@ -1,4 +1,4 @@
-# Mj Mallorca — Software Developer & Graphic Designer
+# Mj Mallorca — Web Developer & Graphic Designer
 
 A static, dependency-free portfolio site (HTML + CSS + vanilla JS). Open `index.html` directly or host it on GitHub Pages / Netlify / Vercel.
 
