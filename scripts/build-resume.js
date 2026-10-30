@@ -67,13 +67,16 @@ const doc = new Document({
         ] }),
 
       heading("Professional Summary"),
-      para([run("Information Technology student and graphic designer who designs accessible digital interfaces and builds responsive front-end web applications that align with real business needs. Brings a year of graphic design for an International Esports organization, freelance product design for a local milk tea brand, and hands-on IT and network support experience, turning complex requirements into clear visual prototypes, polished layouts and clean, scalable front-end code.")]),
+      para([run("Graphic designer with an Information Technology background who designs accessible digital interfaces and builds responsive front-end web applications that align with real business needs. Brings two years of graphic design for an International Esports organization, a year each of product and packaging design for a local cosmetics brand and a local milk tea brand, and hands-on IT and network support experience, turning complex requirements into clear visual prototypes, polished layouts and clean, scalable front-end code.")]),
 
       heading("Experience"),
-      ...entry("Freelance Graphic Designer — Aurora Gaming", "Oct 2025 – Present (1 yr)"),
+      ...entry("Freelance Graphic Designer — Aurora Gaming", "Oct 2024 – Present (2 yrs)"),
       bullet("Design match-day graphics for Tournament Posting, including match results, pre-game announcements, defeat recaps and the season match schedule."),
       bullet("Build reusable templates so posts can be published right after each match, with sponsor-ready layouts for Aurora Esports."),
-      ...entry("Freelance Graphic Designer — Super Daddy Milk Tea Shop", "Aug 2025 – Feb 2026 (6 mos)"),
+      ...entry("Graphic Designer — Sugar Dolls (Local Cosmetic Products)", "1 yr"),
+      bullet("Designed packaging for a Lip & Cheek Gel Tint, including a print-ready box dieline, brand board (color palette and typography) and 3D product mockups."),
+      bullet("Created social media ads for the brand’s perfume and wellness products."),
+      ...entry("Graphic Designer — Super Daddy Milk Tea Shop", "1 yr"),
       bullet("Designed product posters for the shop’s coffee, milk tea, and frappe lines, featuring signature flavors and seasonal drink offerings."),
       bullet("Created social media promotions with product photo retouching, price callouts and bilingual (English–Filipino) copy, giving each drink its own bold color theme."),
       ...entry("Technical & Network Support Intern — PTSI Philippines", "Jun 2026 – Oct 2026", "Productivity Technologies Services, Inc."),
@@ -89,9 +92,6 @@ const doc = new Document({
       para([run("Live: ", { bold: true }), link("bs-aid-website.vercel.app", "https://bs-aid-website.vercel.app")], 40),
       ...entry("Personal Portfolio Website — Designer & Developer", "2026"),
       bullet("Designed and coded an interactive, responsive portfolio in HTML, CSS and JavaScript, deployed on Vercel."),
-
-      heading("Education"),
-      ...entry("Pamantasan ng Lungsod ng Valenzuela", "Present", "Information Technology — 4th Year Student"),
 
       heading("Skills"),
       skillLine("Graphic Design", "Adobe Photoshop, Adobe Illustrator, Figma, CapCut, Photo Manipulation, Social Media Design, Layout Design"),
