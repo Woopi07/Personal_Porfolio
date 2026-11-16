@@ -1112,5 +1112,10 @@
     }, { passive: true });
   }
 
+
+  // Video section: only one video plays at a time
+  document.querySelectorAll(".vframe video").forEach((v) => v.addEventListener("play", () => {
+    document.querySelectorAll(".vframe video").forEach((o) => { if (o !== v) o.pause(); });
+  }));
   $("#year").textContent = new Date().getFullYear();
 })();
