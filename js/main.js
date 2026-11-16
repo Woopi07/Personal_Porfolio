@@ -24,6 +24,7 @@
     cosmetics: "Cosmetic Graphics",
     mockup: "Brand Mockups",
     logo: "Logo Design",
+    thumbnail: "YouTube Thumbnails",
   };
 
   const projects = [
@@ -234,6 +235,24 @@
       mark: "SD",
     },
     {
+      id: "khufra-thumbnails",
+      landscape: true,
+      title: "Khufra — YouTube Thumbnails",
+      category: "thumbnail",
+      summary: "Click-worthy thumbnails for a Mobile Legends gaming channel.",
+      description: "A thumbnail series for a Mobile Legends: Bang Bang channel focused on Khufra — combos, emblem builds, counter guides, skin showcases and gameplay. Every thumbnail pairs a large hero render with a bold, two-word hook in white and yellow, skill-icon combos and arrows, so each video reads instantly at small sizes in the feed.",
+      client: "MLBB Gaming Channel",
+      year: "2026",
+      role: "Thumbnail Designer",
+      tags: ["YouTube", "Thumbnails", "Esports", "Photoshop"],
+      scope: "Hero cutouts and lighting, headline hooks, skill-icon combos and a consistent black-and-yellow series style.",
+      deliverables: ["Combo guide thumbnail", "Emblem build thumbnail", "Counter guide thumbnail", "Skin montage thumbnail", "Gameplay thumbnail"],
+      links: [],
+      images: ["assets/work/thumbnails/khufra-thumb-1.webp", "assets/work/thumbnails/khufra-thumb-2.webp", "assets/work/thumbnails/khufra-thumb-3.webp", "assets/work/thumbnails/khufra-thumb-4.webp", "assets/work/thumbnails/khufra-thumb-5.webp"],
+      art: ["esports"],
+      mark: "KH",
+    },
+    {
       id: "superdaddy-logo",
       title: "Super Daddy — Logo Design",
       category: "logo",
@@ -367,6 +386,26 @@
       fit: "contain",
       art: ["brand"],
       mark: "SD",
+    },
+    {
+      id: "feat-thumbnails",
+      category: "featured",
+      landscape: true,
+      label: "YouTube Thumbnails",
+      title: "YouTube Thumbnails",
+      summary: "Bold, high-contrast thumbnails for a gaming channel.",
+      description: "Thumbnails for a Mobile Legends: Bang Bang channel — combo guides, emblem builds, counter tips, skin montages and gameplay. Big hero renders, short punchy hooks in white and yellow, and skill-icon combos keep every video readable and clickable at any size.",
+      client: "MLBB Gaming Channel",
+      year: "2026",
+      role: "Thumbnail Designer",
+      tags: ["YouTube", "Thumbnails", "Esports", "Photoshop"],
+      scope: "Hero cutouts and lighting, headline hooks, skill-icon combos and a consistent series style.",
+      deliverables: ["Combo guide", "Emblem build", "Counter guide", "Skin montage", "Gameplay"],
+      links: [],
+      images: imagesOf("khufra-thumbnails"),
+      deck: "16 / 9",
+      art: ["esports"],
+      mark: "KH",
     },
   ];
   projects.push(...featuredDesign);
@@ -547,6 +586,7 @@
   const cosmeticsWall = $("#cosmeticsWall");
   const mockupWall = $("#mockupWall");
   const logoWall = $("#logoWall");
+  const thumbWall = $("#thumbWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
   const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
   const pad = (n) => String(n).padStart(2, "0");
@@ -630,6 +670,8 @@
     "Brand mockups will be featured here.");
   fillWall(logoWall, "logoCount", "logo", "Logos coming soon",
     "Logo designs will be featured here.");
+  fillWall(thumbWall, "thumbCount", "thumbnail", "Thumbnails coming soon",
+    "YouTube thumbnails will be featured here.");
   fillWall(cosmeticsWall, "cosmeticsCount", "cosmetics", "Cosmetic graphics coming soon",
     "Skincare and beauty campaigns, product ads and social creatives will be featured here.");
 
@@ -983,7 +1025,7 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  [webList, designList, wall, productWall, cosmeticsWall, mockupWall, logoWall].forEach((root) => root.addEventListener("click", (e) => {
+  [webList, designList, wall, productWall, cosmeticsWall, mockupWall, logoWall, thumbWall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
   }));
