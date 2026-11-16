@@ -22,6 +22,7 @@
     social: "Esports & Social Media",
     product: "Product Design",
     cosmetics: "Cosmetic Graphics",
+    mockup: "Mockups & Logos",
   };
 
   const projects = [
@@ -215,6 +216,22 @@
       art: ["social"],
       mark: "SD",
     },
+    {
+      id: "superdaddy-brand",
+      title: "Super Daddy — Logo & Brand Mockups",
+      category: "mockup",
+      summary: "Wordmark, monogram and merch mockups for a milk tea brand.",
+      description: "A playful logo system for Super Daddy: a chunky “Super Daddy” wordmark and an “SD” monogram, both with a straw slicing through the S. Applied across four colorways — Espresso, Caramel gold, Whipped cream and Mocha — on tote bags, mugs, drink cups and a full storefront.",
+      client: "Super Daddy",
+      year: "2026",
+      role: "Brand & Graphic Designer",
+      scope: "Wordmark and monogram design, color palette, and application mockups for merchandise, packaging and store signage.",
+      deliverables: ["Wordmark & SD monogram", "4-color brand palette", "Tote bag & mug mockups", "Frappe, milk tea & hot coffee cups", "Storefront signage"],
+      links: [],
+      images: ["assets/work/mockups/superdaddy-storefront.webp", "assets/work/mockups/superdaddy-cups.webp", "assets/work/mockups/superdaddy-totes.webp", "assets/work/mockups/superdaddy-mugs.webp"],
+      art: ["brand"],
+      mark: "SD",
+    },
   ];
 
   /* =======================================================
@@ -391,6 +408,7 @@
   const wall = $("#workWall");
   const productWall = $("#productWall");
   const cosmeticsWall = $("#cosmeticsWall");
+  const mockupWall = $("#mockupWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
   const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
   const pad = (n) => String(n).padStart(2, "0");
@@ -470,6 +488,8 @@
   };
   fillWall(productWall, "productCount", "product", "Product designs coming soon",
     "Packaging, labels and product mockups will be featured here.");
+  fillWall(mockupWall, "mockupCount", "mockup", "Mockups coming soon",
+    "Logo systems and brand mockups will be featured here.");
   fillWall(cosmeticsWall, "cosmeticsCount", "cosmetics", "Cosmetic graphics coming soon",
     "Skincare and beauty campaigns, product ads and social creatives will be featured here.");
 
@@ -823,7 +843,7 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  [webList, designList, wall, productWall, cosmeticsWall].forEach((root) => root.addEventListener("click", (e) => {
+  [webList, designList, wall, productWall, cosmeticsWall, mockupWall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
   }));
