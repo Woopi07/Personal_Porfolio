@@ -265,6 +265,22 @@
       art: ["brand"],
       mark: "SD",
     },
+    {
+      id: "sugardolls-mockups",
+      title: "Sugar Dolls — Product Mockups",
+      category: "mockup",
+      summary: "Packaging mockups across a full cosmetics product line.",
+      description: "Product mockups for the Sugar Dolls line, all built on one playful system: a chunky retro serif, a tiny heart accent and a four-color palette of Coral, Butter, Plum and Blush pink. The range covers Powder Puff eau de parfum bottles and boxes, Poppy Blush compacts, Rise and Rest morning and night capsule packs, and a six-shade lip and cheek gel tint lineup.",
+      client: "Sugar Dolls",
+      year: "2026",
+      role: "Packaging & Graphic Designer",
+      scope: "Packaging design and colorway system across perfume, blush, supplements and lip tint, with flat product mockups for each variant.",
+      deliverables: ["Powder Puff perfume bottle & box (4 colorways)", "Poppy Blush box & compact (4 colorways)", "Rise and Rest capsule packs (morning & night)", "Lip & cheek gel tint (6 shades)"],
+      links: [],
+      images: ["assets/work/mockups/sugardolls-powder-puff.webp", "assets/work/mockups/sugardolls-poppy-blush.webp", "assets/work/mockups/sugardolls-rise-and-rest.webp", "assets/work/mockups/sugardolls-gel-tints.webp"],
+      art: ["packaging"],
+      mark: "SD",
+    },
   ];
 
   /* =======================================================
