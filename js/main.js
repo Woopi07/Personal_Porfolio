@@ -22,7 +22,8 @@
     social: "Esports & Social Media",
     product: "Product Design",
     cosmetics: "Cosmetic Graphics",
-    mockup: "Mockups & Logos",
+    mockup: "Brand Mockups",
+    logo: "Logo Design",
   };
 
   const projects = [
@@ -218,7 +219,7 @@
     },
     {
       id: "superdaddy-brand",
-      title: "Super Daddy — Logo & Brand Mockups",
+      title: "Super Daddy — Brand Mockups",
       category: "mockup",
       summary: "Wordmark, monogram and merch mockups for a milk tea brand.",
       description: "A playful logo system for Super Daddy: a chunky “Super Daddy” wordmark and an “SD” monogram, both with a straw slicing through the S. Applied across four colorways — Espresso, Caramel gold, Whipped cream and Mocha — on tote bags, mugs, drink cups and a full storefront.",
@@ -229,6 +230,38 @@
       deliverables: ["Wordmark & SD monogram", "4-color brand palette", "Tote bag & mug mockups", "Frappe, milk tea & hot coffee cups", "Storefront signage"],
       links: [],
       images: ["assets/work/mockups/superdaddy-storefront.webp", "assets/work/mockups/superdaddy-cups.webp", "assets/work/mockups/superdaddy-totes.webp", "assets/work/mockups/superdaddy-mugs.webp"],
+      art: ["brand"],
+      mark: "SD",
+    },
+    {
+      id: "superdaddy-logo",
+      title: "Super Daddy — Logo Design",
+      category: "logo",
+      summary: "Wordmark and badge logo for a milk tea shop.",
+      description: "A bold, friendly wordmark for Super Daddy, where a drinking straw doubles as the stroke through the S. The system includes the full “Super Daddy” wordmark with a tilted tagline pill and a round “SD” badge for stickers, cups and signage.",
+      client: "Super Daddy",
+      year: "2026",
+      role: "Logo Designer",
+      scope: "Concept, custom lettering, straw-S symbol, badge version and tagline lockups.",
+      deliverables: ["Primary wordmark", "SD monogram badge", "Tagline lockups"],
+      links: [],
+      images: ["assets/work/logos/superdaddy-wordmark.webp", "assets/work/logos/superdaddy-badge.webp"],
+      art: ["brand"],
+      mark: "SD",
+    },
+    {
+      id: "sugardolls-logo",
+      title: "Sugar Dolls — Logo Design",
+      category: "logo",
+      summary: "Retro serif wordmark and badge for a cosmetics brand.",
+      description: "A sweet, retro wordmark for Sugar Dolls with a soft, chunky serif and a tiny heart accent. The system includes horizontal and stacked versions, a circular “S” badge with the tagline “Wear your dolly dreams”, and a five-color palette of Coral, Sunrise orange, Butter, Cream and Plum.",
+      client: "Sugar Dolls",
+      year: "2026",
+      role: "Logo Designer",
+      scope: "Wordmark, stacked lockup, circular badge, tagline and brand color palette.",
+      deliverables: ["Primary & stacked wordmark", "Circular S badge", "Color variations", "5-color palette"],
+      links: [],
+      images: ["assets/work/logos/sugardolls-wordmark.webp", "assets/work/logos/sugardolls-logo-board.webp", "assets/work/logos/sugardolls-badge.webp"],
       art: ["brand"],
       mark: "SD",
     },
@@ -409,6 +442,7 @@
   const productWall = $("#productWall");
   const cosmeticsWall = $("#cosmeticsWall");
   const mockupWall = $("#mockupWall");
+  const logoWall = $("#logoWall");
   const arrowSVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
   const chevron = (dir) => `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${dir < 0 ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}"/></svg>`;
   const pad = (n) => String(n).padStart(2, "0");
@@ -489,7 +523,9 @@
   fillWall(productWall, "productCount", "product", "Product designs coming soon",
     "Packaging, labels and product mockups will be featured here.");
   fillWall(mockupWall, "mockupCount", "mockup", "Mockups coming soon",
-    "Logo systems and brand mockups will be featured here.");
+    "Brand mockups will be featured here.");
+  fillWall(logoWall, "logoCount", "logo", "Logos coming soon",
+    "Logo designs will be featured here.");
   fillWall(cosmeticsWall, "cosmeticsCount", "cosmetics", "Cosmetic graphics coming soon",
     "Skincare and beauty campaigns, product ads and social creatives will be featured here.");
 
@@ -843,7 +879,7 @@
     if (lastFocus) lastFocus.focus({ preventScroll: true });
   };
 
-  [webList, designList, wall, productWall, cosmeticsWall, mockupWall].forEach((root) => root.addEventListener("click", (e) => {
+  [webList, designList, wall, productWall, cosmeticsWall, mockupWall, logoWall].forEach((root) => root.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-project]");
     if (btn) openModal(btn.dataset.project, btn, +(btn.dataset.index || 0));
   }));
