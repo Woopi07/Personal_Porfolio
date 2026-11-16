@@ -284,6 +284,94 @@
   ];
 
   /* =======================================================
+     Graphic Design showcase rows — each row gathers the images of
+     several projects into one flip-through deck.
+     ======================================================= */
+  const imagesOf = (...ids) => ids.flatMap((id) => projects.find((p) => p.id === id).images);
+  const featuredDesign = [
+    {
+      id: "feat-esports",
+      category: "featured",
+      label: "Esports & Social Media",
+      title: "Aurora Gaming — Esports Graphics",
+      summary: "Tournament updates, posting and brand visuals for an international esports organization.",
+      description: "Two years of graphic design for Aurora Gaming, an international esports organization: tournament updates, match results and schedules, player features, follower campaigns and hero build guides — all built on one consistent, cinematic visual system so every post is instantly recognizable in the feed.",
+      client: "Aurora Gaming",
+      year: "2024–2026",
+      role: "Esports Graphic Designer",
+      tags: ["Photoshop", "Social Media", "Templates", "Esports"],
+      scope: "Tournament and match-day graphics, social media posting, follower campaigns and brand visuals, built as reusable templates for fast turnarounds.",
+      deliverables: ["Match results & schedules", "Tournament & match-day posters", "Player & MVP features", "Follower milestone campaign", "Hero build guides"],
+      links: [],
+      images: imagesOf("aurora-match-day", "aurora-road-to-100k", "aurora-hero-builds"),
+      cover: "50% 18%",
+      art: ["esports"],
+      mark: "AG",
+    },
+    {
+      id: "feat-ads",
+      category: "featured",
+      label: "Product Static Ads",
+      title: "Product Static Advertisement",
+      summary: "Static ads for food, beverage and beauty products.",
+      description: "Static product ads for local brands: bold drink posters for Super Daddy milk tea shop, where each flavor gets its own color world and clear price callouts, plus beauty and wellness ads for Sugar Dolls — perfume, skincare and supplement visuals made to stop the scroll.",
+      client: "Super Daddy · Sugar Dolls",
+      year: "2025–2026",
+      role: "Graphic Designer",
+      tags: ["Product Ads", "Retouching", "Social Media", "Photoshop"],
+      scope: "Product cutouts and retouching, ad layouts, headline and price callouts, and exports for social media and marketplace listings.",
+      deliverables: ["Super Daddy drink posters", "Sugar Dolls perfume ads", "Skincare & supplement ads"],
+      links: [],
+      images: imagesOf("super-daddy", "sugar-dolls", "rise-and-rest", "sd-skin"),
+      deck: "4 / 5",
+      fit: "contain",
+      art: ["social"],
+      mark: "SD",
+    },
+    {
+      id: "feat-mockups",
+      category: "featured",
+      label: "Brand Mockups",
+      title: "Mockups",
+      summary: "Packaging and merchandise mockups for two local brands.",
+      description: "Brand and packaging mockups that show each identity in the real world: Super Daddy’s storefront, cups, totes and mugs, and the full Sugar Dolls product line — perfume, blush, supplements and lip & cheek gel tint packaging with its print-ready dieline.",
+      client: "Super Daddy · Sugar Dolls",
+      year: "2026",
+      role: "Brand & Packaging Designer",
+      tags: ["Packaging", "Mockups", "Branding", "Illustrator"],
+      scope: "Packaging design, colorway systems and application mockups for merchandise, signage and product lines.",
+      deliverables: ["Storefront & signage", "Cups, totes & mugs", "Perfume, blush & capsule packaging", "Gel tint packaging & dieline"],
+      links: [],
+      images: imagesOf("superdaddy-brand", "sugardolls-mockups", "sugar-dolls-tint"),
+      deck: "3 / 2",
+      fit: "contain",
+      art: ["packaging"],
+      mark: "SD",
+    },
+    {
+      id: "feat-logos",
+      category: "featured",
+      label: "Logo Design",
+      title: "Logo",
+      summary: "Wordmarks, badges and color systems for two local brands.",
+      description: "Logo systems for Super Daddy and Sugar Dolls: a chunky wordmark with a straw-through-the-S symbol and round SD badge for the milk tea shop, and a sweet retro serif wordmark with a heart accent, circular S badge and five-color palette for the cosmetics brand.",
+      client: "Super Daddy · Sugar Dolls",
+      year: "2026",
+      role: "Logo Designer",
+      tags: ["Logo Design", "Typography", "Color Systems", "Branding"],
+      scope: "Concept, custom wordmarks, monograms and badges, color variations and brand palettes.",
+      deliverables: ["Primary wordmarks", "Monogram badges", "Color variations", "Brand color palettes"],
+      links: [],
+      images: imagesOf("superdaddy-logo", "sugardolls-logo"),
+      deck: "4 / 3",
+      fit: "contain",
+      art: ["brand"],
+      mark: "SD",
+    },
+  ];
+  projects.push(...featuredDesign);
+
+  /* =======================================================
      Certifications — add one object per certificate.
      `image` (certificate scan, opens in a lightbox), `url` (verify link),
      `credential` (ID) and `skills` are optional.
@@ -471,12 +559,12 @@
     const slides = Array.from({ length: n }, (_, k) =>
       `<div class="sc-slide" data-pos="${k}">${mediaFor(p, k)}</div>`).join("");
     return `
-    <article class="showcase${p.landscape ? " is-landscape" : ""}" data-cat="${p.category}" data-id="${p.id}" data-reveal>
+    <article class="showcase${p.landscape ? " is-landscape" : ""}${p.fit === "contain" ? " fit-contain" : ""}" data-cat="${p.category}" data-id="${p.id}" data-reveal>
       <div class="sc-stage-wrap">
         <div class="sc-stage" data-tilt-card data-slides="${n}" data-current="0" role="button" tabindex="0"
              aria-label="Open project: ${p.title}">
           ${site ? `<div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>${host(site.url)}</span></div>` : ""}
-          <div class="sc-deck">${slides}</div>
+          <div class="sc-deck"${p.deck ? ` style="aspect-ratio:${p.deck}"` : ""}>${slides}</div>
         </div>
         ${n > 1 ? `
         <div class="sc-controls">
@@ -488,7 +576,7 @@
       </div>
       <div class="sc-info">
         <span class="sc-index" aria-hidden="true">${pad(i + 1)}</span>
-        <span class="tag">${CATEGORY_LABEL[p.category]}</span>
+        <span class="tag">${p.label || CATEGORY_LABEL[p.category]}</span>
         <h3 class="sc-title">${p.title}</h3>
         <p class="sc-desc">${p.description}</p>
         <dl class="sc-meta">
@@ -507,7 +595,7 @@
   const webProjects = projects.filter((p) => p.category === "uiux");
   const designProjects = projects.filter((p) => p.category === "social");
   webList.innerHTML = webProjects.map(showcaseHTML).join("");
-  designList.innerHTML = designProjects.map(showcaseHTML).join("");
+  designList.innerHTML = featuredDesign.map(showcaseHTML).join("");
 
   // Every image as its own tile in a masonry wall
   const wallTile = ({ p, k }, i) => `
@@ -860,7 +948,7 @@
     if (!p) return;
     lastFocus = trigger || document.activeElement;
 
-    $("#modalTag").textContent = CATEGORY_LABEL[p.category];
+    $("#modalTag").textContent = p.label || CATEGORY_LABEL[p.category];
     $("#modalTitle").textContent = p.title;
     $("#modalDesc").textContent = p.description;
     $("#modalClient").textContent = p.client;
